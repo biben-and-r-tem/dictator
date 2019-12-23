@@ -1,0 +1,7 @@
+@import "mixins";
+
+//Подключение шрифтов
+@include font-face(Theanodidot, "../fonts/Theanodidot/theanodidotregular", normal);
+@include font-face(Circe-Light, "../fonts/Circe/Circe-Light", 350);
+@include font-face(Circe-Regular, "../fonts/Circe/Circe-Regular", normal);
+@include font-face(Circe-Bold, "../fonts/Circe/Circe-Bold", bold);

@@ -1,0 +1,247 @@
+@import "media_mixins";
+@import "mixins";
+@import "vars";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: $color-262626;
+}
+
+.container-big {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.promo-page-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/promo-page-main-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include tablet {
+        height: fit-content;
+    }
+
+    .promo-page-block {
+        position: relative;
+        margin-top: 70px;
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: fit-content;
+            width: 40.2%;
+            min-width: 342px;
+
+            @include mobile_sm {
+                min-width: 274px;
+            }
+
+            @include mobile_md {
+                min-width: 300px;
+            }
+
+            @include tablet {
+                position: relative;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .day-and-night-block {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include tablet {
+                justify-content: space-around;
+            }
+
+            .day-block-item,
+            .night-block-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 26%;
+                max-width: 318px;
+                min-width: 250px;
+                margin-top: 107px;
+
+                .title-block {
+                    position: relative;
+                    font-family: "Theanodidot";
+
+                    span {
+                        position: relative;
+                        display: block;
+                        color: $color-828A95;
+                        line-height: 100%;
+                        font-size: 36px;
+                        z-index: 2;
+
+                        @include desktop {
+                            font-size: 28px;
+                        }
+
+                        &:first-child {
+                            font-size: 64px;
+                            color: $color-FE5700;
+                            text-transform: uppercase;
+
+                            @include desktop {
+                                font-size: 58px;
+                            }
+                        }
+                    }
+
+                    i {
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 98px;
+                        height: 98px;
+                        border: 1px solid $color-424B54;
+                        position: absolute;
+                        z-index: 1;
+                        transform: rotate(45deg);
+
+                        @include desktop {
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                        &::before,
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                        }
+
+                        &::before {
+                            border: 2px solid $color-424B54;
+                            width: 90%;
+                            height: 90%;
+                        }
+
+                        &::after {
+                            background: url(../img/logo-head-hover.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 100% 100%;
+                            width: 50%;
+                            height: 40%;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+
+                .date-time-block {
+                    font-family: "Circe-Light";
+                    font-size: 24px;
+                    color: $color-FBFBFF;
+                    margin-top: 22px;
+
+                    @include desktop {
+                        font-size: 20px;
+                        margin-top: 18px;
+                    }
+                }
+
+                .hidden-block {
+                    font-family: "Circe-Light";
+                    font-size: 18px;
+                    color: $color-828A95;
+                    width: 78%;
+                    margin-top: 5px;
+
+                    @include desktop {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+
+        .contacts-block {
+            font-family: "Circe-Regular";
+            font-size: 48px;
+            color: $color-828A95;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 39px;
+
+            @include mobile_md {
+                text-align: center;
+            }
+
+
+            @include mobile {
+                font-size: 26px;
+            }
+
+            @include tablet_sm {
+                font-size: 32px;
+                margin-top: 80px;
+            }
+
+            @include tablet_md {
+                font-size: 36px;
+            }
+
+            @include tablet {
+                position: relative;
+                margin-top: 60px;
+            }
+
+            @include desktop {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @include desktop_lg {
+                font-size: 40px;
+            }
+
+            @include desktop_xl {
+                font-size: 44px;
+            }
+
+            span {
+                font-family: "Circe-Bold";
+                color: $color-FE5700;
+
+                @include mobile_md {
+                    display: block;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
