@@ -28,13 +28,24 @@ body {
     background-position: center;
     background-size: cover;
 
-    @include tablet {
+    @include desktop {
         height: fit-content;
     }
 
     .promo-page-block {
         position: relative;
         margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet_sm {
+            margin-top: 40px;
+        }
+
+        @include desktop {
+            margin-top: 80px;
+        }
 
         .logo {
             position: absolute;
@@ -54,7 +65,7 @@ body {
                 min-width: 300px;
             }
 
-            @include tablet {
+            @include desktop {
                 position: relative;
             }
 
@@ -70,7 +81,7 @@ body {
             flex-wrap: wrap;
             justify-content: space-between;
 
-            @include tablet {
+            @include desktop {
                 justify-content: space-around;
             }
 
@@ -80,7 +91,7 @@ body {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                width: 26%;
+                width: 34%;
                 max-width: 318px;
                 min-width: 250px;
                 margin-top: 107px;
@@ -97,7 +108,7 @@ body {
                         font-size: 36px;
                         z-index: 2;
 
-                        @include desktop {
+                        @include tablet {
                             font-size: 28px;
                         }
 
@@ -106,7 +117,7 @@ body {
                             color: $color-FE5700;
                             text-transform: uppercase;
 
-                            @include desktop {
+                            @include tablet {
                                 font-size: 58px;
                             }
                         }
@@ -125,7 +136,7 @@ body {
                         z-index: 1;
                         transform: rotate(45deg);
 
-                        @include desktop {
+                        @include tablet {
                             width: 80px;
                             height: 80px;
                         }
@@ -165,7 +176,7 @@ body {
                     color: $color-FBFBFF;
                     margin-top: 22px;
 
-                    @include desktop {
+                    @include tablet {
                         font-size: 20px;
                         margin-top: 18px;
                     }
@@ -178,7 +189,7 @@ body {
                     width: 78%;
                     margin-top: 5px;
 
-                    @include desktop {
+                    @include tablet {
                         font-size: 17px;
                     }
                 }
@@ -190,9 +201,6 @@ body {
             font-size: 48px;
             color: $color-828A95;
             width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
             display: flex;
             justify-content: space-between;
             margin-bottom: 39px;
@@ -213,20 +221,18 @@ body {
             @include tablet_sm {
                 font-size: 32px;
                 margin-top: 80px;
+                margin-bottom: 20px;
             }
 
             @include tablet_md {
                 font-size: 36px;
             }
 
-            @include tablet {
-                position: relative;
-                margin-top: 60px;
-            }
-
             @include desktop {
                 flex-direction: column;
                 align-items: center;
+                margin-top: 80px;
+                margin-bottom: 80px;
             }
 
             @include desktop_lg {
