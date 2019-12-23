@@ -197,6 +197,10 @@ body {
             justify-content: space-between;
             margin-bottom: 39px;
 
+            @include mobile_sm {
+                font-size: 23px;
+            }
+
             @include mobile_md {
                 text-align: center;
             }
@@ -231,6 +235,10 @@ body {
 
             @include desktop_xl {
                 font-size: 44px;
+            }
+
+            a {
+                color: $color-FE5700;
             }
 
             span {
