@@ -25,7 +25,35 @@ $ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 $color-262626:#262626;
+$color-232323:#232323;
+$color-0A0908:#0A0908;
+$color-0B0C0C:#0B0C0C;
+$color-0F0E0C:#0F0E0C;
+$color-171513:#171513;
+$color-1E1E1E:#1E1E1E;
 $color-FE5700:#FE5700;
 $color-828A95:#828A95;
+$color-A0A1A4:#A0A1A4;
 $color-424B54:#424B54;
 $color-FBFBFF:#FBFBFF;
+$color-BB7B15:#BB7B15;
+$color-CCA43B:#CCA43B;
+$color-FFD445:#FFD445;
+$color-6BADB8:#6BADB8;
+$color-ECE5F0:#ECE5F0;
+$color-E2C391:#E2C391;
+$color-715B37:#715B37;
+$color-783519:#783519;
+$color-512D1D:#512D1D;
+
+$gradient-1:linear-gradient(180deg, #FFD445 23.89%, #BB7B15 73.06%);
+$gradient-2:linear-gradient(180deg, #0A0908 0%, rgba(10, 9, 8, 0) 100%);
+$gradient-3:linear-gradient(90deg, #FFD445 0%, #BB7B15 50%, #FFD445 100%);
+$gradient-4:linear-gradient(104.11deg, rgba(10, 9, 8, 0.7) 0%, rgba(10, 9, 8, 0) 53.65%, rgba(10, 9, 8, 0.7) 100%);
+$gradient-5:linear-gradient(180deg, #262626 0%, rgba(38, 38, 38, 0) 100%);
+$gradient-6:linear-gradient(180deg, #E2C391 0%, #715B37 100%);
+$gradient-7:linear-gradient(180deg, #232323 0%, rgba(35, 35, 35, 0) 100%);
+$gradient-8:linear-gradient(119.31deg, rgba(38, 38, 38, 0.6) 0%, rgba(38, 38, 38, 0) 53.65%, rgba(38, 38, 38, 0.7) 100%, rgba(38, 38, 38, 0.6) 100%);
+
+$shadow-1:0px 0px 4px rgba(21, 23, 24, 0.43);
+$shadow-2:0px 0px 8px rgba(0, 0, 0, 0.4);

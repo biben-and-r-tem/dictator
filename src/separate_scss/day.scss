@@ -1,0 +1,391 @@
+@import "../scss/media_mixins";
+@import "../scss/mixins";
+@import "../scss/vars";
+
+body {
+    background-image: url(../img/pattern-day-bg.svg);
+    background-color: $color-232323;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+header {
+    background: $gradient-7;
+}
+
+.btn {
+    color: $color-FBFBFF;
+
+    &_with-bg {
+        background: fade-out($color-0A0908, 0.3);
+    }
+}
+
+.phone {
+    background-image: $gradient-6;
+    color: $color-E2C391;
+}
+
+.menu-block {
+    &__adress {
+        color: $color-ECE5F0;
+    }
+
+    &__copiright {
+        color: $color-ECE5F0;
+    }
+}
+
+.logo {
+    background: url(../img/nav-logo-night.svg);
+}
+
+.day-night-switch {
+
+    span {
+        color: $color-ECE5F0;
+
+        &:first-child {
+            background-image: $gradient-6;
+            color: $color-E2C391;
+        }
+    }
+}
+
+.date-time {
+
+    span {
+        &:last-child {
+            color: $color-E2C391;
+        }
+    }
+}
+
+.title-block {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: url(../img/hookah-for-title.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 193px;
+        height: 50px;
+        display: block;
+    }
+
+    &::before {
+        left: -223px;
+    }
+
+    &::after {
+        right: -223px;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    &__title {
+        color: $color-E2C391;
+    }
+
+    &__subtitle {
+        color: $color-ECE5F0;
+    }
+}
+
+.main-top-block {
+    .title-block {
+        top: 0;
+        bottom: 0;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.dawn-arrow {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $color-E2C391;
+    margin-bottom: 24px;
+    text-shadow: $shadow-1;
+
+    &::after {
+        content: '';
+        display: block;
+        background: url(../img/dawn-arrow-day.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 58px;
+        height: 33px;
+        margin-top: 5px;
+    }
+}
+
+.food-menu {
+    background: url(../img/food-menu-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: $shadow-2;
+    padding: 42px;
+    margin-top: 69px;
+}
+
+.food-menu-block {
+    flex-direction: column;
+    height: 639px;
+    background: fade-out($color-1E1E1E, 0.08);
+
+    &__text-bg {
+        width: 100%;
+    }
+
+    .title-block {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin-top: 84px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: relative;
+            right: initial;
+            left: initial;
+            height: 2px;
+            width: 100%;
+            background: fade-out($color-828A95, 0.93);
+        }
+
+        &__title {
+            white-space: nowrap;
+            margin: 0 36px;
+        }
+    }
+}
+
+.food-menu-items {
+    border-bottom: 2px solid fade-out($color-828A95, 0.93);
+    padding-bottom: 50px;
+
+    &__item {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-top: 112px;
+        margin-right: 120px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__icon {
+        background: fade-out($color-783519, 0.8);
+        border: 1px solid fade-out($color-512D1D, 0.8);
+
+        &::before {
+            background: fade-out($color-262626, 0.3);
+            border: 2px solid fade-out($color-512D1D, 0.3);
+        }
+    }
+
+    &__text {
+        margin-top: 40px;
+        color: $color-FBFBFF;
+    }
+}
+
+.promotions {
+    padding-top: 90px;
+
+    .swiper-container {
+        position: initial;
+        margin: 0 130px;
+
+        .swiper-slide {
+            position: relative;
+
+            &::before {
+                background: $gradient-8;
+            }
+
+            &::after {
+                border: 1px solid $color-E2C391;
+            }
+        }
+
+        .swiper-buttons {
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                background: url(../img/left-arrow-day.svg);
+            }
+        }
+    }
+}
+
+.gallery {
+    padding-top: 200px;
+    padding-bottom: 123px;
+
+    &__items {
+        position: relative;
+        flex-wrap: wrap;
+        box-shadow: $shadow-2;
+    }
+
+    &__item {
+        width: 33.333%;
+
+        &::after {
+            border: 1px solid $color-E2C391;
+        }
+    }
+
+    .btn {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.about-us {
+    background: url(../img/about-us-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: $shadow-2;
+    padding: 40px;
+}
+
+.about-us-block {
+    position: relative;
+    background: fade-out($color-1E1E1E, 0.08);
+    padding: 15px;
+    padding-bottom: 80px;
+
+    &::before,
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        margin: auto;
+    }
+
+    &::before {
+        top: 0;
+        bottom: 0;
+        background: url(../img/about-us-bg-2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 402px;
+        height: 402px;
+    }
+
+    &:after {
+        right: 0;
+        bottom: 50px;
+        width: 90%;
+        height: 2px;
+        background: fade-out($color-828A95, 0.93);
+    }
+
+    .title-block {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin-top: 20px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: relative;
+            right: initial;
+            left: initial;
+            height: 2px;
+            width: 100%;
+            background: fade-out($color-828A95, 0.93);
+        }
+
+        &__title {
+            white-space: nowrap;
+            margin: 0 36px;
+        }
+    }
+
+    &__video {
+
+        &::before {
+            right: 13px;
+            border: 1px solid $color-E2C391;
+        }
+    }
+}
+
+.club-scheme {
+    background: url(../img/club-shame-bg-day.png);
+
+    &::after {
+        background: url(../img/pattern-day-bg-2.svg);
+        background-repeat: no-repeat;
+        background-repeat: repeat;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    &__title-block-wrapper {
+        width: 100%;
+    }
+}
+
+.form-block {
+
+    form {
+
+        input {
+            border-bottom: 1px solid $color-715B37;
+            color: $color-FBFBFF;
+        }
+    }
+}
+
+.map-contacts-block {
+
+    &__content {
+
+        &::before {
+            background-image: url(../img/pattern-day-bg-2.svg);
+            background-repeat: repeat;
+            background-position: center;
+        }
+
+        .date-time {
+
+            span {
+                &:last-child {
+                    color: $color-E2C391;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: $color-0F0E0C;
+}

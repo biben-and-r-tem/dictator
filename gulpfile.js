@@ -47,6 +47,17 @@ const styleFiles = [
     //Порядок подключения js файлов
     scriptFiles = [
         './src/main_files/**/jquery.js',
+        './src/main_files/**/jquery.min.js',
+        './src/main_files/**/gsap.js',
+        './src/main_files/**/gsap.min.js',
+        './src/main_files/**/TweenMax.js',
+        './src/main_files/**/TweenMax.min.js',
+        './src/main_files/**/ScrollToPlugin.js',
+        './src/main_files/**/ScrollToPlugin.min.js',
+        './src/main_files/**/ScrollMagic.js',
+        './src/main_files/**/ScrollMagic.min.js',
+        './src/main_files/**/animation.gsap.js',
+        './src/main_files/**/animation.gsap.min.js',
         './src/main_files/**/*.js',
         './src/js/**/*.js'
     ]
@@ -116,6 +127,42 @@ gulp.task('styles', () => {
         .pipe(browserSync.stream());
 });
 
+//Таск для обработки стилей separate
+gulp.task('separateStyles', () => {
+    //Шаблон для поиска файлов CSS
+    //Всей файлы по шаблону './src/css/**/*.css'
+    return gulp.src('./src/separate_scss/**/*.scss')
+
+        //Проверка на ошибки
+        .pipe(plumber({
+            errorHandler: notify.onError({
+                title: 'Separate-Styles',
+                message: "Error: <%= error.message %>"
+            })
+        }))
+
+        .pipe(sourcemaps.init())
+
+        //Указать stylus() , sass() или less()
+        .pipe(sass())
+
+        //Добавить префиксы
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+            cascade: true
+        }))
+
+        //Объединение медиа запросов
+        .pipe(gcmq())
+
+        //Создание sourcemap
+        .pipe(sourcemaps.write('.'))
+
+        //Выходная папка для стилей
+        .pipe(gulp.dest('./build/css'))
+        .pipe(browserSync.stream());
+});
+
 //Таск для обработки и сжатия стилей
 gulp.task('stylesMin', () => {
     //Шаблон для поиска файлов CSS
@@ -135,6 +182,49 @@ gulp.task('stylesMin', () => {
 
         //Объединение файлов в один
         .pipe(concat('style.css'))
+
+        //Добавить префиксы
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+            cascade: true
+        }))
+
+        //Объединение медиа запросов
+        .pipe(gcmq())
+
+        //Минификация CSS
+        .pipe(cleanCSS({
+            level: {
+                1: {
+                    specialComments: 0
+                }
+            }
+        }, (details) => {
+            console.log(`${details.name}: ${details.stats.originalSize}`);
+            console.log(`${details.name}: ${details.stats.minifiedSize}`);
+        }))
+
+        //Выходная папка для стилей
+        .pipe(gulp.dest('./build/css'))
+        .pipe(browserSync.stream());
+});
+
+//Таск для обработки и сжатия стилей separate
+gulp.task('separateStylesMin', () => {
+    //Шаблон для поиска файлов CSS
+    //Всей файлы по шаблону './src/css/**/*.css'
+    return gulp.src('./src/separate_scss/**/*.scss')
+
+        //Проверка на ошибки
+        .pipe(plumber({
+            errorHandler: notify.onError({
+                title: 'Separate-Styles',
+                message: "Error: <%= error.message %>"
+            })
+        }))
+
+        //Указать stylus() , sass() или less()
+        .pipe(sass())
 
         //Добавить префиксы
         .pipe(autoprefixer({
@@ -274,6 +364,8 @@ gulp.task('watch', () => {
     gulp.watch('./src/**/*.html', gulp.series('html'))
     //Следить за файлами со стилями с нужным расширением
     gulp.watch(styleFiles, gulp.series('styles'))
+    //Следить за файлами со стилями separate с нужным расширением
+    gulp.watch('./src/separate_scss/**/*.scss', gulp.series('separateStyles'))
     //Следить за JS файлами
     gulp.watch(scriptFiles, gulp.series('scripts'))
 });
@@ -293,11 +385,13 @@ gulp.task('watchCompress', () => {
     gulp.watch('./src/**/*.html', gulp.series('htmlMin'))
     //Следить за файлами со стилями с нужным расширением
     gulp.watch(styleFiles, gulp.series('stylesMin'))
+    //Следить за файлами со стилями separate с нужным расширением
+    gulp.watch('./src/separate_scss/**/*.scss', gulp.series('separateStylesMin'))
     //Следить за JS файлами
     gulp.watch(scriptFiles, gulp.series('scriptsMin'))
 });
 
 //Таск по умолчанию, Запускает del, styles, scripts, img и watch
-gulp.task('default', gulp.series('del', gulp.parallel('html', 'styles', 'scripts', 'img', 'fonts'), 'watch'));
+gulp.task('default', gulp.series('del', gulp.parallel('html', 'styles', 'separateStyles', 'scripts', 'img', 'fonts'), 'watch'));
 //Таск для продакшена, Запускает del, styles, scripts, img-compress
-gulp.task('compress', gulp.series('del', gulp.parallel('htmlMin', 'stylesMin', 'scriptsMin', 'img-compress', 'fonts'), 'watchCompress'));
+gulp.task('compress', gulp.series('del', gulp.parallel('htmlMin', 'stylesMin', 'separateStylesMin', 'scriptsMin', 'img-compress', 'fonts'), 'watchCompress'));
