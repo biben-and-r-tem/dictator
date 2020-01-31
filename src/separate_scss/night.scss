@@ -297,6 +297,33 @@ header {
         background: url(../img/elipses-top.svg);
     }
 
+    &.gallery {
+        &_gallery-page {
+
+            &::before,
+            &::after {
+                background: url(../img/elipses-top.svg);
+                height: 123px;
+                width: 100%;
+            }
+
+            &::before {
+                top: -123px;
+                transform: rotate(180deg);
+            }
+
+            &::after {
+                bottom: 130px;
+            }
+
+            .gallery {
+                &__items {}
+
+                &__item {}
+            }
+        }
+    }
+
     &__item {
         width: 50%;
 

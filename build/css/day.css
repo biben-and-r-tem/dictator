@@ -96,6 +96,11 @@ header {
   color: #ECE5F0;
 }
 
+.title-top-block .title-block::before,
+.title-top-block .title-block::after {
+  display: none;
+}
+
 .main-top-block .title-block {
   top: 0;
   bottom: 0;

@@ -100,6 +100,18 @@ header {
     }
 }
 
+
+.title-top-block {
+
+    .title-block {
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
 .main-top-block {
     .title-block {
         top: 0;

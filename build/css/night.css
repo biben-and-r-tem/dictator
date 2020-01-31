@@ -331,6 +331,24 @@ header {
   background: url(../img/elipses-top.svg);
 }
 
+.gallery.gallery_gallery-page::before,
+.gallery.gallery_gallery-page::after {
+  background: url(../img/elipses-top.svg);
+  height: 123px;
+  width: 100%;
+}
+
+.gallery.gallery_gallery-page::before {
+  top: -123px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.gallery.gallery_gallery-page::after {
+  bottom: 130px;
+}
+
 .gallery__item {
   width: 50%;
 }
