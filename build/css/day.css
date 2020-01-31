@@ -154,6 +154,30 @@ header {
   margin-top: 69px;
 }
 
+.food-menu .food-menu-items {
+  border-bottom: 2px solid rgba(130, 138, 149, 0.07);
+  padding-bottom: 50px;
+}
+
+.food-menu .food-menu-items__item {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  text-align: center;
+  margin-top: 112px;
+  margin-right: 120px;
+}
+
+.food-menu .food-menu-items__item:last-child {
+  margin-right: 0;
+}
+
+.food-menu .food-menu-items__text {
+  margin-top: 40px;
+}
+
 .food-menu-block {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -197,24 +221,8 @@ header {
   margin: 0 36px;
 }
 
-.food-menu-items {
-  border-bottom: 2px solid rgba(130, 138, 149, 0.07);
-  padding-bottom: 50px;
-}
-
-.food-menu-items__item {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-  text-align: center;
-  margin-top: 112px;
-  margin-right: 120px;
-}
-
-.food-menu-items__item:last-child {
-  margin-right: 0;
+.food-menu-page-block__list li {
+  border-bottom: 1px dashed #E2C391;
 }
 
 .food-menu-items__icon {
@@ -228,7 +236,6 @@ header {
 }
 
 .food-menu-items__text {
-  margin-top: 40px;
   color: #FBFBFF;
 }
 

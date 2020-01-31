@@ -154,6 +154,26 @@ header {
     box-shadow: $shadow-2;
     padding: 42px;
     margin-top: 69px;
+
+    .food-menu-items {
+        border-bottom: 2px solid fade-out($color-828A95, 0.93);
+        padding-bottom: 50px;
+
+        &__item {
+            flex-direction: column-reverse;
+            text-align: center;
+            margin-top: 112px;
+            margin-right: 120px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &__text {
+            margin-top: 40px;
+        }
+    }
 }
 
 .food-menu-block {
@@ -189,20 +209,18 @@ header {
     }
 }
 
-.food-menu-items {
-    border-bottom: 2px solid fade-out($color-828A95, 0.93);
-    padding-bottom: 50px;
+.food-menu-page-block {
 
-    &__item {
-        flex-direction: column-reverse;
-        text-align: center;
-        margin-top: 112px;
-        margin-right: 120px;
+    &__list {
 
-        &:last-child {
-            margin-right: 0;
+        li {
+            border-bottom: 1px dashed $color-E2C391;
         }
+
     }
+}
+
+.food-menu-items {
 
     &__icon {
         background: fade-out($color-783519, 0.8);
@@ -215,7 +233,6 @@ header {
     }
 
     &__text {
-        margin-top: 40px;
         color: $color-FBFBFF;
     }
 }

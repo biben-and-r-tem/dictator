@@ -240,6 +240,41 @@ header {
   margin-bottom: 0;
 }
 
+.food-menu-page-block {
+  position: relative;
+}
+
+.food-menu-page-block::before,
+.food-menu-page-block::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 96%;
+  height: 123px;
+  margin: 0 auto;
+  background: url(../img/elipses-top.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.food-menu-page-block::before {
+  top: 0;
+}
+
+.food-menu-page-block::after {
+  bottom: 0;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.food-menu-page-block__list li {
+  border-bottom: 1px dashed #BB7B15;
+}
+
 .food-menu-items {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

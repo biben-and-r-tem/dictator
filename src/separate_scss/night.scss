@@ -220,6 +220,43 @@ header {
     }
 }
 
+.food-menu-page-block {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 96%;
+        height: 123px;
+        margin: 0 auto;
+        background: url(../img/elipses-top.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 1;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+
+    &__list {
+
+        li {
+            border-bottom: 1px dashed $color-BB7B15;
+        }
+
+    }
+}
+
 .food-menu-items {
     flex-direction: column;
     justify-content: space-between;
