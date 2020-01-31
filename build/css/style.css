@@ -764,6 +764,22 @@ nav {
   height: 94px;
 }
 
+.food-menu-page-block .food-menu-items__dropdown {
+  margin-left: 164px;
+  margin-top: -60px;
+  margin-bottom: 50px;
+}
+
+.food-menu-page-block .food-menu-items__dropdown li {
+  margin-bottom: 10px;
+}
+
+.food-menu-page-block .food-menu-items__dropdown li a {
+  font-family: 'Circe-Light';
+  font-weight: 350;
+  font-size: 18px;
+}
+
 .food-menu-page-block__content {
   width: 70%;
 }

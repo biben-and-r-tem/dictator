@@ -659,6 +659,22 @@ nav {
             width: 94px;
             height: 94px;
         }
+
+        &__dropdown {
+            margin-left: 164px;
+            margin-top: -60px;
+            margin-bottom: 50px;
+
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    font-family: 'Circe-Light';
+                    font-weight: 350;
+                    font-size: 18px;
+                }
+            }
+        }
     }
 
     &__content {
