@@ -595,45 +595,128 @@ nav {
   position: relative;
 }
 
-.events .swiper-container,
-.promotions .swiper-container {
-  position: initial;
-  margin: 0 130px;
+.events.events_page,
+.events.promotions_page,
+.promotions.events_page,
+.promotions.promotions_page {
+  width: 90%;
+  margin: auto;
+  padding-top: 0;
 }
 
-.events .swiper-container .swiper-slide,
-.promotions .swiper-container .swiper-slide {
+.events.events_page .events__items,
+.events.events_page .promotions__items,
+.events.promotions_page .events__items,
+.events.promotions_page .promotions__items,
+.promotions.events_page .events__items,
+.promotions.events_page .promotions__items,
+.promotions.promotions_page .events__items,
+.promotions.promotions_page .promotions__items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-bottom: 126px;
+}
+
+.events.events_page .events__item,
+.events.events_page .promotions__item,
+.events.promotions_page .events__item,
+.events.promotions_page .promotions__item,
+.promotions.events_page .events__item,
+.promotions.events_page .promotions__item,
+.promotions.promotions_page .events__item,
+.promotions.promotions_page .promotions__item {
+  margin-bottom: 20px;
+}
+
+.events__item,
+.promotions__item {
   position: relative;
 }
 
-.events .swiper-container .swiper-slide::before,
-.events .swiper-container .swiper-slide::after,
-.promotions .swiper-container .swiper-slide::before,
-.promotions .swiper-container .swiper-slide::after {
+.events__item::before,
+.events__item::after,
+.promotions__item::before,
+.promotions__item::after {
   content: '';
   position: absolute;
 }
 
-.events .swiper-container .swiper-slide::before,
-.promotions .swiper-container .swiper-slide::before {
+.events__item::before,
+.promotions__item::before {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-.events .swiper-container .swiper-slide::after,
-.promotions .swiper-container .swiper-slide::after {
+.events__item::after,
+.promotions__item::after {
   top: 13px;
   left: 13px;
   right: 13px;
   bottom: 13px;
 }
 
-.events .swiper-container .swiper-slide img,
-.promotions .swiper-container .swiper-slide img {
+.events__item_content::before,
+.events__item_content::after,
+.events__item_bottom::before,
+.events__item_bottom::after,
+.promotions__item_content::before,
+.promotions__item_content::after,
+.promotions__item_bottom::before,
+.promotions__item_bottom::after {
+  display: none;
+}
+
+.events__item_img,
+.promotions__item_img {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.events__item img,
+.promotions__item img {
   display: block;
   width: 100%;
+}
+
+.events__back,
+.promotions__back {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  height: 50px;
+}
+
+.events__back::before,
+.promotions__back::before {
+  content: '';
+  width: 25px;
+  height: 50px;
+  margin-right: 25px;
+}
+
+.events .swiper-container,
+.promotions .swiper-container {
+  position: initial;
+  margin: 0 130px;
 }
 
 .events .swiper-container .swiper-buttons,
@@ -882,33 +965,21 @@ nav {
   position: relative;
 }
 
-.gallery.gallery_gallery-page {
-  padding-top: 0;
-  padding-bottom: 253px;
-}
-
-.gallery.gallery_gallery-page .gallery__items {
+.gallery-items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-.gallery.gallery_gallery-page .gallery__item {
-  width: 33.333%;
-}
-
-.gallery__items {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.gallery__item {
+.gallery-items__item {
   position: relative;
 }
 
-.gallery__item::after {
+.gallery-items__item::after {
   content: '';
   position: absolute;
   top: 13px;
@@ -918,7 +989,7 @@ nav {
   z-index: 2;
 }
 
-.gallery__item img {
+.gallery-items__item img {
   display: block;
   width: 100%;
   height: 100%;

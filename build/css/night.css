@@ -75,27 +75,102 @@ header {
   background-size: cover;
 }
 
-.events .swiper-container {
-  position: initial;
-  margin: 0 130px;
+.events.events_page::before,
+.events.events_page .events__bottom-bg::before,
+.events.events_page::after,
+.events.events_page .events__bottom-bg::after {
+  content: '';
+  position: absolute;
+  width: 669px;
+  height: 707px;
+  background: url(../img/elipses-left.svg);
 }
 
-.events .swiper-container .swiper-slide {
+.events.events_page::before {
+  top: -390px;
+  left: -5%;
+  -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
+  -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.events.events_page::after {
+  top: -390px;
+  right: -5%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.events.events_page .events__bottom-bg::before {
+  bottom: 0;
+  left: 0;
+}
+
+.events.events_page .events__bottom-bg::after {
+  bottom: 0;
+  right: 0;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -ms-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.events.events_page .events__bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 707px;
+  width: 110%;
+  margin-left: -5%;
+  margin-right: -5%;
+  z-index: 1;
+}
+
+.events.events_page .events__items {
   position: relative;
+  z-index: 2;
 }
 
-.events .swiper-container .swiper-slide::before {
+.events.events_page .events__item {
+  width: 48%;
+}
+
+.events__item::before {
   background: -o-linear-gradient(345.89deg, rgba(10, 9, 8, 0.7) 0%, rgba(10, 9, 8, 0) 53.65%, rgba(10, 9, 8, 0.7) 100%);
   background: linear-gradient(104.11deg, rgba(10, 9, 8, 0.7) 0%, rgba(10, 9, 8, 0) 53.65%, rgba(10, 9, 8, 0.7) 100%);
 }
 
-.events .swiper-container .swiper-slide::after {
+.events__item::after {
   border: 1px solid #BB7B15;
 }
 
-.events .swiper-container .swiper-buttons .swiper-button-next,
-.events .swiper-container .swiper-buttons .swiper-button-prev {
+.events .swiper-buttons .swiper-button-next,
+.events .swiper-buttons .swiper-button-prev {
   background: url(../img/left-arrow-night.svg);
+}
+
+.events__back {
+  margin-bottom: 68px;
+}
+
+.events__back::before {
+  -webkit-mask-image: url(../img/left-arrow-night.svg);
+  mask-image: url(../img/left-arrow-night.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background: #CCA43B;
+}
+
+.events__text {
+  color: #A0A1A4;
+}
+
+.events .btn {
+  margin-top: 85px;
 }
 
 .food-menu {
@@ -334,13 +409,18 @@ header {
   color: #A0A1A4;
 }
 
-.gallery {
-  padding-top: 200px;
-  padding-bottom: 123px;
+.gallery_three .gallery-items__item {
+  width: 33.333%;
 }
 
-.gallery::before,
-.gallery::after {
+.gallery_bg::before,
+.gallery_bg::after,
+.gallery_bg-el::before,
+.gallery_bg-el::after,
+.gallery_bg-el-bottom::before,
+.gallery_bg-el-bottom::after,
+.gallery_bg-el-top::before,
+.gallery_bg-el-top::after {
   content: '';
   position: absolute;
   left: 0;
@@ -350,14 +430,20 @@ header {
   z-index: 1;
 }
 
-.gallery::before {
+.gallery_bg::before,
+.gallery_bg-el::before,
+.gallery_bg-el-bottom::before,
+.gallery_bg-el-top::before {
   top: 0;
   width: 100%;
   height: 325px;
   background: url(../img/gallery-bg.png);
 }
 
-.gallery::after {
+.gallery_bg::after,
+.gallery_bg-el::after,
+.gallery_bg-el-bottom::after,
+.gallery_bg-el-top::after {
   width: 96%;
   margin: 0 auto;
   bottom: 0;
@@ -366,49 +452,94 @@ header {
   background: url(../img/elipses-top.svg);
 }
 
-.gallery.gallery_gallery-page::before,
-.gallery.gallery_gallery-page::after {
+.gallery.gallery_bg {
+  padding-top: 190px;
+  padding-bottom: 123px;
+}
+
+.gallery.gallery_bg-el {
+  padding-top: 0;
+  padding-bottom: 253px;
+}
+
+.gallery.gallery_bg-el::before,
+.gallery.gallery_bg-el::after {
   background: url(../img/elipses-top.svg);
   height: 123px;
   width: 100%;
 }
 
-.gallery.gallery_gallery-page::before {
+.gallery.gallery_bg-el::before {
   top: -123px;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.gallery.gallery_gallery-page::after {
+.gallery.gallery_bg-el::after {
   bottom: 130px;
 }
 
-.gallery__item {
+.gallery.gallery_bg-el-bottom {
+  padding-top: 0;
+  padding-bottom: 253px;
+}
+
+.gallery.gallery_bg-el-bottom::before {
+  display: none;
+}
+
+.gallery.gallery_bg-el-bottom::after {
+  background: url(../img/elipses-top.svg);
+  height: 123px;
+  width: 100%;
+  bottom: 130px;
+}
+
+.gallery.gallery_bg-el-top {
+  padding-top: 0;
+  padding-bottom: 126px;
+}
+
+.gallery.gallery_bg-el-top::before {
+  background: url(../img/elipses-top.svg);
+  height: 123px;
+  width: 100%;
+  top: -123px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.gallery.gallery_bg-el-top::after {
+  display: none;
+}
+
+.gallery-items__item {
   width: 50%;
 }
 
-.gallery__item::after {
+.gallery-items__item::after {
   border: 1px solid #BB7B15;
 }
 
-.gallery__item:nth-child(1) .gallery__description-bg {
+.gallery-items__item:nth-child(1n) .gallery-items__description-bg {
   background: rgba(11, 12, 12, 0.95);
 }
 
-.gallery__item:nth-child(2) .gallery__description {
+.gallery-items__item:nth-child(2n) .gallery-items__description {
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
 }
 
-.gallery__item:nth-child(2) .gallery__description-bg {
+.gallery-items__item:nth-child(2n) .gallery-items__description-bg {
   background: rgba(11, 12, 12, 0.6);
 }
 
-.gallery__description,
-.gallery__description-bg {
+.gallery-items__description,
+.gallery-items__description-bg {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -416,7 +547,7 @@ header {
   width: 100%;
 }
 
-.gallery__description {
+.gallery-items__description {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -434,11 +565,11 @@ header {
   padding: 30px;
 }
 
-.gallery__description-bg {
+.gallery-items__description-bg {
   z-index: 1;
 }
 
-.gallery__description-bg::before {
+.gallery-items__description-bg::before {
   content: '';
   position: absolute;
   left: 0;
@@ -454,7 +585,7 @@ header {
   background: rgba(187, 123, 21, 0.6);
 }
 
-.gallery__description-title {
+.gallery-items__description-title {
   font-size: 32px;
   line-height: 100%;
   margin-bottom: 14px;

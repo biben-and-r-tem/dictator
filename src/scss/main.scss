@@ -539,38 +539,90 @@ nav {
 .promotions {
     position: relative;
 
-    .swiper-container {
-        position: initial;
-        margin: 0 130px;
+    &.events,
+    &.promotions {
+        &_page {
+            width: 90%;
+            margin: auto;
+            padding-top: 0;
 
-        .swiper-slide {
-            position: relative;
+            .events,
+            .promotions {
+
+                &__items {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding-bottom: 126px;
+                }
+
+                &__item {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::after {
+            top: 13px;
+            left: 13px;
+            right: 13px;
+            bottom: 13px;
+        }
+
+        &_content,
+        &_bottom {
 
             &::before,
             &::after {
-                content: '';
-                position: absolute;
-            }
-
-            &::before {
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-
-            &::after {
-                top: 13px;
-                left: 13px;
-                right: 13px;
-                bottom: 13px;
-            }
-
-            img {
-                display: block;
-                width: 100%;
+                display: none;
             }
         }
+
+        &_img {
+            height: fit-content;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__back {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        text-transform: uppercase;
+        height: 50px;
+
+        &::before {
+            content: '';
+            width: 25px;
+            height: 50px;
+            margin-right: 25px;
+        }
+    }
+
+    .swiper-container {
+        position: initial;
+        margin: 0 130px;
 
         .swiper-buttons {
             position: absolute;
@@ -758,27 +810,11 @@ nav {
 
 .gallery {
     position: relative;
+}
 
-    &.gallery {
-        &_gallery-page {
-            padding-top: 0;
-            padding-bottom: 253px;
-
-            .gallery {
-                &__items {
-                    flex-wrap: wrap;
-                }
-
-                &__item {
-                    width: 33.333%;
-                }
-            }
-        }
-    }
-
-    &__items {
-        display: flex;
-    }
+.gallery-items {
+    display: flex;
+    flex-wrap: wrap;
 
     &__item {
         position: relative;

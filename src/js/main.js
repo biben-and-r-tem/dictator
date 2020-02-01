@@ -2,7 +2,11 @@ $(document).ready(function () {
     if (!$('.main-top-block').length && $('.day-night-switch span:first').html() == 'Day') {
         $('header').css({
             'background': 'linear-gradient(180deg, #0A0908 0%, rgba(10, 9, 8, 0.6) 100%)'
-        })
+        });
+    } else if (!$('.main-top-block').length && $('.day-night-switch span:first').html() == 'Night') {
+        $('header').css({
+            'background': 'linear-gradient(180deg, #232323 0%, rgba(35, 35, 35, 0.75) 100%)'
+        });
     } else {
         return false;
     }

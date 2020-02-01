@@ -225,6 +225,21 @@ header {
   border-bottom: 1px dashed #E2C391;
 }
 
+.food-menu-page-block .food-menu-items__icon {
+  background: rgba(35, 35, 35, 0.7);
+  border: 1px solid rgba(81, 45, 29, 0.7);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.food-menu-page-block .food-menu-items__text {
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.food-menu-page-block .food-menu-items__dropdown {
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
 .food-menu-items__icon {
   background: rgba(120, 53, 25, 0.2);
   border: 1px solid rgba(81, 45, 29, 0.2);
@@ -243,27 +258,49 @@ header {
   padding-top: 90px;
 }
 
-.promotions .swiper-container {
-  position: initial;
-  margin: 0 130px;
+.promotions_page .promotions__item {
+  width: 33%;
 }
 
-.promotions .swiper-container .swiper-slide {
-  position: relative;
-}
-
-.promotions .swiper-container .swiper-slide::before {
+.promotions__item::before {
   background: -o-linear-gradient(330.69deg, rgba(38, 38, 38, 0.6) 0%, rgba(38, 38, 38, 0) 53.65%, rgba(38, 38, 38, 0.7) 100%, rgba(38, 38, 38, 0.6) 100%);
   background: linear-gradient(119.31deg, rgba(38, 38, 38, 0.6) 0%, rgba(38, 38, 38, 0) 53.65%, rgba(38, 38, 38, 0.7) 100%, rgba(38, 38, 38, 0.6) 100%);
 }
 
-.promotions .swiper-container .swiper-slide::after {
+.promotions__item::after {
   border: 1px solid #E2C391;
 }
 
-.promotions .swiper-container .swiper-buttons .swiper-button-next,
-.promotions .swiper-container .swiper-buttons .swiper-button-prev {
+.promotions__item.promotions__item_content {
+  width: 63%;
+}
+
+.promotions__item.promotions__item_bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.promotions .swiper-buttons .swiper-button-next,
+.promotions .swiper-buttons .swiper-button-prev {
   background: url(../img/left-arrow-day.svg);
+}
+
+.promotions__back::before {
+  background: url(../img/left-arrow-day.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
 }
 
 .gallery {
@@ -271,24 +308,21 @@ header {
   padding-bottom: 123px;
 }
 
-.gallery__items {
+.gallery-items {
   position: relative;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
-.gallery__item {
+.gallery-items__item {
   width: 33.333%;
 }
 
-.gallery__item::after {
+.gallery-items__item::after {
   border: 1px solid #E2C391;
 }
 
-.gallery .btn {
+.gallery-items .btn {
   position: absolute;
   bottom: 20px;
   right: 20px;

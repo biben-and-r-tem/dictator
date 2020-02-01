@@ -218,6 +218,22 @@ header {
         }
 
     }
+
+    .food-menu-items {
+        &__icon {
+            background: fade-out($color-232323, 0.3);
+            border: 1px solid fade-out($color-512D1D, 0.3);
+            box-shadow: $shadow-2;
+        }
+
+        &__text {
+            text-shadow: $shadow-2;
+        }
+
+        &__dropdown {
+            text-shadow: $shadow-2;
+        }
+    }
 }
 
 .food-menu-items {
@@ -240,28 +256,55 @@ header {
 .promotions {
     padding-top: 90px;
 
-    .swiper-container {
-        position: initial;
-        margin: 0 130px;
-
-        .swiper-slide {
-            position: relative;
-
-            &::before {
-                background: $gradient-8;
-            }
-
-            &::after {
-                border: 1px solid $color-E2C391;
+    &_page {
+        .promotions {
+            &__item {
+                width: 33%;
             }
         }
+    }
 
-        .swiper-buttons {
+    &__item {
 
-            .swiper-button-next,
-            .swiper-button-prev {
-                background: url(../img/left-arrow-day.svg);
+        &::before {
+            background: $gradient-8;
+        }
+
+        &::after {
+            border: 1px solid $color-E2C391;
+        }
+
+        &.promotions {
+            &__item {
+                &_content {
+                    width: 63%;
+                }
+
+                &_bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                }
             }
+        }
+    }
+
+    .swiper-buttons {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background: url(../img/left-arrow-day.svg);
+        }
+    }
+
+    &__back {
+
+        &::before {
+            background: url(../img/left-arrow-day.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
         }
     }
 }
@@ -269,12 +312,11 @@ header {
 .gallery {
     padding-top: 200px;
     padding-bottom: 123px;
+}
 
-    &__items {
-        position: relative;
-        flex-wrap: wrap;
-        box-shadow: $shadow-2;
-    }
+.gallery-items {
+    position: relative;
+    box-shadow: $shadow-2;
 
     &__item {
         width: 33.333%;
