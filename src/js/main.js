@@ -7,9 +7,73 @@ $(document).ready(function () {
         $('header').css({
             'background': 'linear-gradient(180deg, #232323 0%, rgba(35, 35, 35, 0.75) 100%)'
         });
-    } else {
-        return false;
-    }
+    };
+
+    $('.scroll-to').click(function (e) {
+        e.preventDefault();
+
+        var $window = $(window),
+            href = $(this).attr("href"),
+            topY = $(href).offset().top;
+
+        TweenMax.to($window, 1, {
+            scrollTo: {
+                y: topY,
+                autoKill: true
+            },
+            ease: Circ.easeOut
+        });
+    });
+
+    $(".popup-gal a").each(function () {
+        if ($(this).hasClass('btn') || $(this).hasClass('see-more')) {
+            return false;
+        } else {
+            $(this).attr("data-fancybox", "gallery");
+            $(this).attr("data-caption", $(this).find("img").attr("alt"));
+            $(this).attr("title", $(this).find("img").attr("alt"));
+        };
+    });
+
+    $(".popup-gal a").fancybox({
+        buttons: [
+            "zoom",
+            "fullScreen",
+            "close"
+        ],
+        animationDuration: 366,
+        animationEffect: 'zoom-in-out',
+        transitionEffect: "tube",
+        transitionDuration: 366,
+        idleTime: 10,
+        btnTpl: {
+            arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left"><div><span></span></div></button>',
+            arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right"><div><span></span></div></button>'
+        },
+        lang: "ru",
+        i18n: {
+            ru: {
+                CLOSE: "Закрыть",
+                FULL_SCREEN: "На весь экран",
+                ZOOM: "Увеличить/Уменьшить"
+            }
+        }
+    });
+});
+
+$(window).bind("load resize ready", function () {
+    $('.btn').each(function () {
+        var svg = $(this).find('svg'),
+            rect1 = $(this).find('rect:eq(0)'),
+            rect2 = $(this).find('rect:eq(1)'),
+            width = $(this).outerWidth(),
+            height = $(this).outerHeight();
+
+        svg.attr("width", width).attr("height", height).attr("viewBox", '0 0 ' + width + ' ' + height);
+        rect1.attr("width", width - 2).attr("height", height - 2);
+        rect2.attr("width", width - 11).attr("height", height - 11);
+
+    });
 });
 
 var swiper = new Swiper('.events .swiper-container', {

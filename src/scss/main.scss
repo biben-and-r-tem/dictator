@@ -10,12 +10,20 @@
     text-decoration: none;
 }
 
+:root {
+    --swiper-navigation-size: fit-content;
+}
+
 body {
     font-family: 'Circe-Regular';
     font-weight: normal;
     font-size: 20px;
     line-height: 100%;
     color: $color-FBFBFF;
+
+    @include desktop_xl {
+        font-size: 18px;
+    }
 }
 
 a {
@@ -38,8 +46,39 @@ header {
     height: 140px;
     z-index: 1000;
 
+    @include desktop_xl {
+        height: 120px;
+    }
+
     .menu {
         margin-top: 25px;
+
+        @include desktop_xl {
+            margin-top: 16px;
+        }
+    }
+
+    .menu-block {
+
+        &:first-child {
+            width: 39%;
+        }
+
+        &:last-child {
+            width: 38%;
+        }
+    }
+
+    .day-night-switch {
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: $gradient-9;
+        }
     }
 }
 
@@ -60,9 +99,19 @@ nav {
     text-transform: uppercase;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @include desktop_xl {
+        font-size: 26px;
+    }
 }
 
 .menu-block {
+
+    &:last-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     &__contacts {
         display: flex;
@@ -91,6 +140,10 @@ nav {
     li {
         margin-right: 30px;
 
+        @include desktop_xl {
+            margin-right: 25px;
+        }
+
         &:last-child {
             margin-right: 0;
         }
@@ -101,23 +154,34 @@ nav {
     display: block;
     width: 84px;
     height: 118px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% 100% !important;
+
+    @include desktop_xl {
+        width: 80px;
+        height: 102px;
+    }
 }
 
 
 .day-night-switch {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-right: 7%;
 
     span {
         font-family: "Theanodidot";
         font-size: 17px;
         font-weight: normal;
         line-height: 26px;
+
+        @include desktop_xl {
+            font-size: 15px;
+        }
 
         &:first-child {
             background-clip: text;
@@ -126,6 +190,10 @@ nav {
             font-weight: normal;
             text-transform: uppercase;
             line-height: 46px;
+
+            @include desktop_xl {
+                font-size: 26px;
+            }
         }
     }
 }
@@ -148,19 +216,44 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 232px;
     height: 64px;
+    width: fit-content;
+    padding: 0 40px;
+    white-space: nowrap;
     text-transform: uppercase;
     font-size: 18px;
+    line-height: 100%;
     outline: none;
     border: none;
     border-radius: 0;
     background: transparent;
     cursor: pointer;
 
+    @include desktop_xl {
+        font-size: 16px;
+        padding: 0 25px;
+        height: 60px;
+    }
+
     &_with-bg {
-        width: 313px;
         height: 50px;
+
+        @include desktop_xl {
+            height: 46px;
+        }
+    }
+
+    &_left-pos {
+        margin-top: 85px;
+    }
+
+    &_center-pos {
+        position: absolute;
+        bottom: 27px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 2;
     }
 
     svg {
@@ -169,6 +262,18 @@ nav {
         left: 0;
         width: 100%;
         height: 100%;
+
+        rect {
+            stroke: url(#btn-gradient);
+
+            &:nth-child(1) {
+                stroke-width: 2px;
+            }
+
+            &:nth-child(2) {
+                stroke-width: 1px;
+            }
+        }
     }
 }
 
@@ -208,12 +313,20 @@ nav {
             font-size: 72px;
             text-shadow: $shadow-1;
             text-transform: capitalize;
+
+            @include desktop_xl {
+                font-size: 69px;
+            }
         }
 
         &__subtitle {
             font-size: 30px;
             text-shadow: $shadow-1;
             text-transform: capitalize;
+
+            @include desktop_xl {
+                font-size: 28px;
+            }
         }
     }
 
@@ -248,11 +361,19 @@ nav {
         font-family: "Theanodidot";
         font-size: 60px;
         line-height: 100%;
+
+        @include desktop_xl {
+            font-size: 56px;
+        }
     }
 
     &__subtitle {
         font-size: 32px;
         line-height: 100%;
+
+        @include desktop_xl {
+            font-size: 30px;
+        }
     }
 }
 
@@ -285,7 +406,7 @@ nav {
 }
 
 .container {
-    width: 90%;
+    width: 81%;
     margin: 0 auto;
 }
 
@@ -542,8 +663,6 @@ nav {
     &.events,
     &.promotions {
         &_page {
-            width: 90%;
-            margin: auto;
             padding-top: 0;
 
             .events,
@@ -565,6 +684,7 @@ nav {
 
     &__item {
         position: relative;
+        overflow: hidden;
 
         &::before,
         &::after {
@@ -586,6 +706,26 @@ nav {
             bottom: 13px;
         }
 
+        &:hover {
+            .btn {
+                &_center-pos {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            img {
+                transform: scale(1.15);
+            }
+        }
+
+        .btn {
+            &_center-pos {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
         &_content,
         &_bottom {
 
@@ -602,6 +742,8 @@ nav {
         img {
             display: block;
             width: 100%;
+            transform: scale(1);
+            transition: 1.3s $ease-in-out-sine;
         }
     }
 
@@ -622,7 +764,6 @@ nav {
 
     .swiper-container {
         position: initial;
-        margin: 0 130px;
 
         .swiper-buttons {
             position: absolute;
@@ -632,6 +773,8 @@ nav {
             margin: auto;
             width: 100%;
             height: fit-content;
+            padding-left: 6%;
+            padding-right: 6%;
             display: flex;
             justify-content: space-between;
 
@@ -643,6 +786,10 @@ nav {
                 background-position: center;
                 width: 25px;
                 height: 50px;
+                left: initial;
+                top: initial;
+                right: initial;
+                bottom: initial;
 
                 &::after {
                     display: none;
@@ -740,7 +887,12 @@ nav {
         font-weight: normal;
         font-size: 50px;
         margin-bottom: 45px;
+        margin-top: 70px;
         line-height: 100%;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     &__list {
@@ -795,10 +947,14 @@ nav {
             bottom: 5px;
         }
 
-        img {
+        i {
             display: block;
             height: 50%;
+            width: 50%;
             transform: rotate(-45deg);
+            background-position: center !important;
+            background-size: 100% 100% !important;
+            background-repeat: no-repeat !important;
         }
     }
 
@@ -813,11 +969,14 @@ nav {
 }
 
 .gallery-items {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
+    z-index: 2;
 
     &__item {
         position: relative;
+        overflow: hidden;
 
         &::after {
             content: '';
@@ -829,12 +988,20 @@ nav {
             z-index: 2;
         }
 
+        &:hover {
+            img {
+                transform: scale(1.15);
+            }
+        }
+
         img {
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transform: scale(1);
+            transition: 1.3s $ease-in-out-sine;
         }
     }
 }
@@ -872,9 +1039,17 @@ nav {
             bottom: 13px;
         }
 
+        &:hover {
+            img {
+                transform: scale(1.15);
+            }
+        }
+
         img {
             display: block;
             width: 100%;
+            transform: scale(1);
+            transition: 1.3s $ease-in-out-sine;
         }
     }
 }
@@ -937,6 +1112,10 @@ nav {
             line-height: 100%;
             margin-bottom: 46px;
             color: $color-FBFBFF;
+
+            @include desktop_xl {
+                font-size: 18px;
+            }
 
             &::placeholder {
                 color: $color-FBFBFF;
@@ -1032,6 +1211,10 @@ nav {
         font-size: 48px;
         line-height: 100%;
         margin-bottom: 30px;
+
+        @include desktop_xl {
+            font-size: 44px;
+        }
     }
 
     .phone {

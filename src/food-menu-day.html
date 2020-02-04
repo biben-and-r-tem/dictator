@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/day.css">
     <title>Page Title</title>
@@ -17,13 +16,13 @@
             <div class="menu-block">
                 <div class="menu-block__contacts">
                     <a href="tel:+380678207777" class="phone">+38 067 820 7777</a>
-                    <a href="#" class="menu-block__adress">г. Киев, ул. Ревуцкого, 42г</a>
+                    <a href="#map-block" class="menu-block__adress scroll-to">г. Киев, ул. Ревуцкого, 42г</a>
                 </div>
                 <ul class="menu">
                     <li><a href="#">Главная</a></li>
                     <li><a href="./food-menu-day.html">Меню</a></li>
                     <li><a href="./gallery-day.html">Галерея</a></li>
-                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="./promotions.html">Акции</a></li>
                     <li><a href="./contacts-day.html">Контакты</a></li>
                 </ul>
             </div>
@@ -35,34 +34,27 @@
                     <span>Night</span>
                     <span>Men’s Club</span>
                 </a>
+
+                <div class="date-time">
+                    <span>Ежедневно:</span>
+                    <span>12:00 - 22:00</span>
+                </div>
+
+                <a href="#" class="btn">Резерв столов
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" />
+                        <rect x="5.5" y="5.5" />
+                        <defs>
+                            <linearGradient id="btn-gradient" x1="0" y1="32" x2="232" y2="32"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="var(--color-stop-1)" />
+                                <stop offset="0.5" stop-color="var(--color-stop-2)" />
+                                <stop offset="1" stop-color="var(--color-stop-3)" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
             </div>
-
-            <div class="date-time">
-                <span>Ежедневно:</span>
-                <span>12:00 - 22:00</span>
-            </div>
-
-            <a href="#" class="btn">Резерв столов
-                <svg viewBox="0 0 232 64" fill="none" preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="1" width="230" height="62" stroke="url(#paint0_linear)" stroke-width="2" />
-                    <rect x="5.5" y="5.5" width="221" height="53" stroke="url(#paint1_linear)" />
-                    <defs>
-                        <linearGradient id="paint0_linear" x1="0" y1="32" x2="232" y2="32"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FFD445" />
-                            <stop offset="0.5" stop-color="#BB7B15" />
-                            <stop offset="1" stop-color="#FFD445" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear" x1="5" y1="32" x2="227" y2="32"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FFD445" />
-                            <stop offset="0.5" stop-color="#BB7B15" />
-                            <stop offset="1" stop-color="#FFD445" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-
-            </a>
         </nav>
     </header>
 
@@ -80,15 +72,15 @@
             <div class="food-menu-items">
                 <a href="#" class="food-menu-items__item">
                     <div class="food-menu-items__text">кухня</div>
-                    <div class="food-menu-items__icon"><img src="./img/food-icon-day.svg" alt=""></div>
+                    <div class="food-menu-items__icon"><i id="food"></i></div>
                 </a>
                 <a href="#" class="food-menu-items__item">
                     <div class="food-menu-items__text">Бар</div>
-                    <div class="food-menu-items__icon"><img src="./img/bar-icon-day.svg" alt=""></div>
+                    <div class="food-menu-items__icon"><i id="bar"></i></div>
                 </a>
                 <a href="#" class="food-menu-items__item">
                     <div class="food-menu-items__text">Кальян</div>
-                    <div class="food-menu-items__icon"><img src="./img/hookah-icon-day.svg" alt=""></div>
+                    <div class="food-menu-items__icon"><i id="hookah"></i></div>
                 </a>
                 <ul class="food-menu-items__dropdown">
                     <li><a href="#">Кальян с дыней</a></li>
@@ -99,7 +91,7 @@
                 </ul>
                 <a href="#" class="food-menu-items__item">
                     <div class="food-menu-items__text">Винная карта</div>
-                    <div class="food-menu-items__icon"><img src="./img/wine-icon-day.svg" alt=""></div>
+                    <div class="food-menu-items__icon"><i id="wine"></i></div>
                 </a>
             </div>
             <div class="food-menu-page-block__content">
@@ -158,7 +150,7 @@
         </div>
     </div>
 
-    <div class="map">
+    <div class="map" id="map-block">
         <div class="map-contacts-block">
             <div class="map-contacts-block__content">
                 <div class="map-contacts-block__title">Мы ждем Вас</div>
@@ -186,7 +178,7 @@
                     <li><a href="#">Главная</a></li>
                     <li><a href="./food-menu-day.html">Меню</a></li>
                     <li><a href="./gallery-day.html">Галерея</a></li>
-                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="./promotions.html">Акции</a></li>
                     <li><a href="./contacts-day.html">Контакты</a></li>
                 </ul>
 
@@ -202,33 +194,25 @@
                     <span>Day</span>
                     <span>lounge Hookah Bar</span>
                 </a>
+
+                <a href="#" class="btn">Резерв столов
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" />
+                        <rect x="5.5" y="5.5" />
+                        <defs>
+                            <linearGradient id="btn-gradient" x1="0" y1="32" x2="232" y2="32"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="var(--color-stop-1)" />
+                                <stop offset="0.5" stop-color="var(--color-stop-2)" />
+                                <stop offset="1" stop-color="var(--color-stop-3)" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
             </div>
-
-            <a href="#" class="btn">Резерв столов
-                <svg viewBox="0 0 232 64" fill="none" preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="1" width="230" height="62" stroke="url(#paint0_linear)" stroke-width="2" />
-                    <rect x="5.5" y="5.5" width="221" height="53" stroke="url(#paint1_linear)" />
-                    <defs>
-                        <linearGradient id="paint0_linear" x1="0" y1="32" x2="232" y2="32"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FFD445" />
-                            <stop offset="0.5" stop-color="#BB7B15" />
-                            <stop offset="1" stop-color="#FFD445" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear" x1="5" y1="32" x2="227" y2="32"
-                            gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FFD445" />
-                            <stop offset="0.5" stop-color="#BB7B15" />
-                            <stop offset="1" stop-color="#FFD445" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-
-            </a>
         </nav>
     </footer>
 
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSfg8FeaeY5bZTcHj31v0AXugcJznkQi0&callback=initMap"
         async defer></script>

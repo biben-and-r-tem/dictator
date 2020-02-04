@@ -16,6 +16,15 @@ header {
     &_with-bg {
         background: fade-out($color-0A0908, 0.3);
     }
+
+    svg {
+
+        #btn-gradient {
+            --color-stop-1: #FFD445;
+            --color-stop-2: #BB7B15;
+            --color-stop-3: #FFD445;
+        }
+    }
 }
 
 .phone {
@@ -66,7 +75,131 @@ header {
 
 .main-top-block {
     .title-block {
-        bottom: 256px;
+        bottom: 240px;
+    }
+}
+
+.events,
+.vacancies {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+
+    &__bottom-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 707px;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.vacancies::before,
+.vacancies::after,
+.vacancies .vacancies__bottom-bg::after,
+.vacancies .vacancies__bottom-bg::before,
+.events.events_page::before,
+.events.events_page::after,
+.events.events_page .events__bottom-bg::before,
+.events.events_page .events__bottom-bg::after {
+    content: '';
+    position: absolute;
+    width: 669px;
+    height: 707px;
+    background: url(../img/elipses-left.svg);
+}
+
+.vacancies::before,
+.events.events_page::before {
+    top: -390px;
+    left: 0;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.vacancies::after,
+.events.events_page::after {
+    top: -390px;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.vacancies .vacancies__bottom-bg::before,
+.events.events_page .events__bottom-bg::before {
+    bottom: 0;
+    left: 0;
+}
+
+.vacancies .vacancies__bottom-bg::after,
+.events.events_page .events__bottom-bg::after {
+    bottom: 0;
+    right: 0;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.vacancies {
+    padding-bottom: 146px;
+
+    &__items {
+        position: relative;
+        z-index: 2;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: 35%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            right: 13px;
+            bottom: 13px;
+            border: 1px solid $color-BB7B15;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        width: 60%;
+        padding-top: 13px;
+    }
+
+    &__title {
+        font-size: 30px;
+        line-height: 100%;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: $gradient-1;
+        color: $color-BB7B15;
+        margin-bottom: 30px;
+    }
+
+    .see-more {
+        margin-top: 20px;
     }
 }
 
@@ -74,67 +207,18 @@ header {
     padding-top: 90px;
 
     &::before {
-        content: '';
-        position: absolute;
-        top: 0;
         left: 0;
+        top: 0;
         width: 100%;
         height: 123px;
         background: url(../img/elipses-top.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
     }
 
     &.events {
 
         &_page {
 
-            &::before,
-            .events__bottom-bg::before,
-            &::after,
-            .events__bottom-bg::after {
-                content: '';
-                position: absolute;
-                width: 669px;
-                height: 707px;
-                background: url(../img/elipses-left.svg);
-            }
-
-            &::before {
-                top: -390px;
-                left: -5%;
-                transform: matrix(1, 0, 0, -1, 0, 0);
-            }
-
-            &::after {
-                top: -390px;
-                right: -5%;
-                transform: rotate(180deg);
-            }
-
-            .events__bottom-bg::before {
-                bottom: 0;
-                left: 0;
-            }
-
-            .events__bottom-bg::after {
-                bottom: 0;
-                right: 0;
-                transform: matrix(-1, 0, 0, 1, 0, 0);
-            }
-
             .events {
-                &__bottom-bg {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    height: 707px;
-                    width: 110%;
-                    margin-left: -5%;
-                    margin-right: -5%;
-                    z-index: 1;
-                }
 
                 &__items {
                     position: relative;
@@ -160,6 +244,7 @@ header {
     }
 
     .swiper-buttons {
+        padding-top: 217px;
 
         .swiper-button-next,
         .swiper-button-prev {
@@ -181,10 +266,6 @@ header {
 
     &__text {
         color: $color-A0A1A4;
-    }
-
-    .btn {
-        margin-top: 85px;
     }
 }
 
@@ -371,6 +452,25 @@ header {
             background: fade-out($color-0B0C0C, 0.3);
             border: 2px solid fade-out($color-BB7B15, 0.3);
         }
+
+        i {
+
+            &#food {
+                background: url(../img/food-icon-night.svg);
+            }
+
+            &#bar {
+                background: url(../img/bar-icon-night.svg);
+            }
+
+            &#hookah {
+                background: url(../img/hookah-icon-night.svg);
+            }
+
+            &#wine {
+                background: url(../img/wine-icon-night.svg);
+            }
+        }
     }
 
     &__text {
@@ -555,6 +655,10 @@ header {
         font-size: 32px;
         line-height: 100%;
         margin-bottom: 14px;
+
+        @include desktop_xl {
+            font-size: 30px;
+        }
     }
 }
 
@@ -597,7 +701,7 @@ header {
     }
 
     &__video {
-        margin-right: -5.59%;
+        margin-right: -11.69%;
 
         &::before,
         &::after {
@@ -635,6 +739,7 @@ header {
 
 .see-more {
     color: $color-6BADB8;
+    display: block;
 }
 
 .club-scheme {
