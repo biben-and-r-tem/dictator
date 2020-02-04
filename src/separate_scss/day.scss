@@ -233,25 +233,6 @@ header {
             background: fade-out($color-232323, 0.3);
             border: 1px solid fade-out($color-512D1D, 0.3);
             box-shadow: $shadow-2;
-
-            i {
-
-                &#food {
-                    background: url(../img/food-icon-day.svg);
-                }
-
-                &#bar {
-                    background: url(../img/bar-icon-day.svg);
-                }
-
-                &#hookah {
-                    background: url(../img/hookah-icon-day.svg);
-                }
-
-                &#wine {
-                    background: url(../img/wine-icon-day.svg);
-                }
-            }
         }
 
         &__text {
@@ -273,6 +254,25 @@ header {
         &::before {
             background: fade-out($color-262626, 0.3);
             border: 2px solid fade-out($color-512D1D, 0.3);
+        }
+
+        i {
+
+            &#food {
+                background: url(../img/food-icon-day.svg);
+            }
+
+            &#bar {
+                background: url(../img/bar-icon-day.svg);
+            }
+
+            &#hookah {
+                background: url(../img/hookah-icon-day.svg);
+            }
+
+            &#wine {
+                background: url(../img/wine-icon-day.svg);
+            }
         }
     }
 

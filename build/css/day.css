@@ -238,22 +238,6 @@ header {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
-.food-menu-page-block .food-menu-items__icon i#food {
-  background: url(../img/food-icon-day.svg);
-}
-
-.food-menu-page-block .food-menu-items__icon i#bar {
-  background: url(../img/bar-icon-day.svg);
-}
-
-.food-menu-page-block .food-menu-items__icon i#hookah {
-  background: url(../img/hookah-icon-day.svg);
-}
-
-.food-menu-page-block .food-menu-items__icon i#wine {
-  background: url(../img/wine-icon-day.svg);
-}
-
 .food-menu-page-block .food-menu-items__text {
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
@@ -270,6 +254,22 @@ header {
 .food-menu-items__icon::before {
   background: rgba(38, 38, 38, 0.7);
   border: 2px solid rgba(81, 45, 29, 0.7);
+}
+
+.food-menu-items__icon i#food {
+  background: url(../img/food-icon-day.svg);
+}
+
+.food-menu-items__icon i#bar {
+  background: url(../img/bar-icon-day.svg);
+}
+
+.food-menu-items__icon i#hookah {
+  background: url(../img/hookah-icon-day.svg);
+}
+
+.food-menu-items__icon i#wine {
+  background: url(../img/wine-icon-day.svg);
 }
 
 .food-menu-items__text {
