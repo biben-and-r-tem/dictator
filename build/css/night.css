@@ -61,7 +61,7 @@ header {
 }
 
 .main-top-block .title-block {
-  bottom: 240px;
+  bottom: 31%;
 }
 
 .events,
@@ -274,7 +274,7 @@ header {
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
-  margin-top: 179px;
+  margin-top: 216px;
 }
 
 .food-menu::before,
@@ -562,6 +562,8 @@ header {
 .gallery.gallery_bg {
   padding-top: 190px;
   padding-bottom: 123px;
+  margin-top: 55px;
+  margin-bottom: 127px;
 }
 
 .gallery.gallery_bg-el {
@@ -709,14 +711,14 @@ header {
 }
 
 .about-us::before {
-  top: 0;
+  top: -102px;
   width: 615px;
   height: 610px;
   background: url(../img/about-us-bg-1.png);
 }
 
 .about-us::after {
-  top: 309px;
+  top: 208px;
   width: 669px;
   height: 707px;
   background: url(../img/elipses-left.svg);
@@ -764,7 +766,7 @@ header {
 .about-us-block__text-bottom {
   width: 100%;
   color: #A0A1A4;
-  margin-top: 180px;
+  margin-top: 136px;
 }
 
 .see-more {

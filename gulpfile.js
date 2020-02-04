@@ -38,9 +38,6 @@ const gulp = require('gulp'),
 
 //Порядок подключения файлов со стилями
 const styleFiles = [
-        // './src/main_files/**/swiper.css',
-        // './src/main_files/**/swiper.min.css',
-        // './src/main_files/**/jquery.fancybox.css',
         './src/main_files/**/*.css',
         './src/main_files/**/*.scss',
         './src/scss/**/fonts.scss',
@@ -51,8 +48,6 @@ const styleFiles = [
     scriptFiles = [
         './src/main_files/**/jquery.js',
         './src/main_files/**/jquery.min.js',
-        // './src/main_files/**/swiper.js',
-        // './src/main_files/**/swiper.min.js',
         './src/main_files/**/gsap.js',
         './src/main_files/**/gsap.min.js',
         './src/main_files/**/TweenMax.js',

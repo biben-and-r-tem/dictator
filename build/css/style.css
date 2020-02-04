@@ -2023,22 +2023,21 @@ nav {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 26px;
+  bottom: 8%;
   margin: auto;
   z-index: 1;
+  height: 58%;
 }
 
 .main-top-block__girl-left,
 .main-top-block__girl-right {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 65%;
   position: relative;
   z-index: 2;
 }
 
 .main-top-block__girl-left {
-  margin-right: 408px;
+  margin-right: 24%;
 }
 
 .title-block {
@@ -2792,11 +2791,11 @@ nav {
 }
 
 .about-us-block__text {
-  width: 47%;
+  width: 50%;
 }
 
 .about-us-block__video {
-  width: 47%;
+  width: 50.4%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -2872,11 +2871,11 @@ nav {
 }
 
 .club-scheme__shame {
-  width: 65%;
+  width: 75%;
 }
 
 .club-scheme .form-block {
-  width: 30%;
+  width: 23%;
 }
 
 .form-block form {

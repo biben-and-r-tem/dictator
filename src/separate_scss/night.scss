@@ -75,7 +75,7 @@ header {
 
 .main-top-block {
     .title-block {
-        bottom: 240px;
+        bottom: 31%;
     }
 }
 
@@ -273,7 +273,7 @@ header {
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: 179px;
+    margin-top: 216px;
 
     &::before,
     &::after {
@@ -528,6 +528,8 @@ header {
         &_bg {
             padding-top: 190px;
             padding-bottom: 123px;
+            margin-top: 55px;
+            margin-bottom: 127px;
         }
 
         &_bg-el {
@@ -675,14 +677,14 @@ header {
     }
 
     &::before {
-        top: 0;
+        top: -102px;
         width: 615px;
         height: 610px;
         background: url(../img/about-us-bg-1.png);
     }
 
     &::after {
-        top: 309px;
+        top: 208px;
         width: 669px;
         height: 707px;
         background: url(../img/elipses-left.svg);
@@ -733,7 +735,7 @@ header {
     &__text-bottom {
         width: 100%;
         color: $color-A0A1A4;
-        margin-top: 180px;
+        margin-top: 136px;
     }
 }
 

@@ -334,20 +334,21 @@ nav {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 26px;
+        bottom: 8%;
         margin: auto;
         z-index: 1;
+        height: 58%;
     }
 
     &__girl-left,
     &__girl-right {
-        height: fit-content;
+        height: 65%;
         position: relative;
         z-index: 2;
     }
 
     &__girl-left {
-        margin-right: 408px;
+        margin-right: 24%;
     }
 }
 
@@ -1018,11 +1019,11 @@ nav {
     z-index: 3;
 
     &__text {
-        width: 47%;
+        width: 50%;
     }
 
     &__video {
-        width: 47%;
+        width: 50.4%;
         height: fit-content;
         position: relative;
         overflow: hidden;
@@ -1084,11 +1085,11 @@ nav {
     }
 
     &__shame {
-        width: 65%;
+        width: 75%;
     }
 
     .form-block {
-        width: 30%;
+        width: 23%;
     }
 }
 
