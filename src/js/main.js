@@ -150,7 +150,7 @@ $(document).ready(function () {
 
         $('.food-menu-switch a').click(function (e) {
             e.preventDefault();
-            $('<a href="#" class="food-menu-close"><i><span></span></i></a>').prependTo('.food-menu-items');
+            $('<a href="#" class="food-menu-close"><i><span></span></i></a>').prependTo(foodMenu);
             foodSwitchTl.play();
 
             $('.food-menu-close').click(function (e) {
@@ -158,6 +158,9 @@ $(document).ready(function () {
                 foodSwitchTl.reverse()
                     .eventCallback("onReverseComplete", function () {
                         $('.food-menu-close').remove();
+                        TweenMax.to(foodMenu, 0, {
+                            clearProps: 'all'
+                        });
                     });
 
             });
