@@ -216,6 +216,10 @@ nav {
         align-items: flex-end;
         height: fit-content;
 
+        @include tablet_sm {
+            margin-top: 40px;
+        }
+
         @include desktop {
             flex-direction: column;
             align-items: flex-start;
@@ -515,8 +519,56 @@ nav {
     padding: 60px 0;
     background: $color-232323;
     box-shadow: $shadow-2;
+    overflow-y: scroll;
+    overflow-x: hidden;
     opacity: 0;
     visibility: hidden;
+}
+
+.main-top-block,
+.title-top-block {
+    .title-block {
+        &__title {
+            font-family: 'Circe-Regular';
+            font-size: 72px;
+
+            @include tablet_sm {
+                font-size: 50px;
+            }
+
+            @include tablet {
+                font-size: 63px;
+            }
+
+            @include desktop {
+                font-size: 66px;
+            }
+
+            @include desktop_xl {
+                font-size: 69px;
+            }
+        }
+
+        &__subtitle {
+            font-size: 30px;
+
+            @include tablet_sm {
+                font-size: 22px;
+            }
+
+            @include tablet {
+                font-size: 24px;
+            }
+
+            @include desktop {
+                font-size: 26px;
+            }
+
+            @include desktop_xl {
+                font-size: 28px;
+            }
+        }
+    }
 }
 
 .main-top-block {
@@ -552,48 +604,13 @@ nav {
         height: fit-content;
 
         &__title {
-            font-family: 'Circe-Regular';
-            font-size: 72px;
             text-shadow: $shadow-1;
             text-transform: capitalize;
-
-            @include tablet_sm {
-                font-size: 50px;
-            }
-
-            @include tablet {
-                font-size: 63px;
-            }
-
-            @include desktop {
-                font-size: 66px;
-            }
-
-            @include desktop_xl {
-                font-size: 69px;
-            }
         }
 
         &__subtitle {
-            font-size: 30px;
             text-shadow: $shadow-1;
             text-transform: capitalize;
-
-            @include tablet_sm {
-                font-size: 22px;
-            }
-
-            @include tablet {
-                font-size: 24px;
-            }
-
-            @include desktop {
-                font-size: 26px;
-            }
-
-            @include desktop_xl {
-                font-size: 28px;
-            }
         }
     }
 
@@ -678,11 +695,6 @@ nav {
 
     .title-block {
         margin-bottom: 70px;
-
-        &__title {
-            font-family: 'Circe-Regular';
-            font-size: 72px;
-        }
     }
 
     &__bg {
@@ -1144,11 +1156,40 @@ nav {
         padding-top: 20px;
         padding-bottom: 20px;
 
+        @include tablet_md {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $color-232323;
+            padding: 60px 5%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 2000;
+        }
+
+        @include tablet {
+            width: 25%;
+        }
+
+        @include desktop_xl {
+            width: 37%;
+        }
+
         &__item {
-            flex-direction: row-reverse;
+            flex-direction: row-reverse !important;
             justify-content: flex-end;
             padding-left: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 70px;
+
+            @include tablet {
+                padding-left: 0;
+                margin-bottom: 0;
+            }
 
             &:last-child {
                 margin-bottom: 0;
@@ -1156,13 +1197,24 @@ nav {
         }
 
         &__text {
-            margin-left: 50px;
-            font-size: 20px;
+            margin-left: 50px !important;
+            margin-top: 0 !important;
+            height: initial !important;
+
+            @include tablet {
+                margin-left: 0 !important;
+                text-align: left !important;
+                width: initial !important;
+            }
         }
 
         &__icon {
             width: 94px;
             height: 94px;
+
+            @include tablet {
+                display: none;
+            }
         }
 
         &__dropdown {
@@ -1170,13 +1222,39 @@ nav {
             margin-top: -60px;
             margin-bottom: 50px;
 
+            @include tablet {
+                margin-left: 40px;
+                margin-top: 40px;
+                margin-bottom: 0;
+            }
+
             li {
                 margin-bottom: 10px;
+
+                @include tablet {
+                    margin-bottom: 25px;
+                }
 
                 a {
                     font-family: 'Circe-Light';
                     font-weight: 350;
                     font-size: 18px;
+
+                    @include mobile {
+                        font-size: 15px;
+                    }
+
+                    @include tablet_sm {
+                        font-size: 15px;
+                    }
+
+                    @include desktop {
+                        font-size: 16px;
+                    }
+
+                    @include desktop_xl {
+                        font-size: 17px;
+                    }
                 }
             }
         }
@@ -1184,6 +1262,18 @@ nav {
 
     &__content {
         width: 70%;
+
+        @include tablet_md {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 70%;
+        }
+
+        @include desktop_xl {
+            width: 59%;
+        }
     }
 
     &__title {
@@ -1195,6 +1285,26 @@ nav {
         margin-bottom: 45px;
         margin-top: 70px;
         line-height: 100%;
+
+        @include tablet_sm {
+            font-size: 28px;
+        }
+
+        @include tablet_md {
+            text-align: left;
+        }
+
+        @include tablet {
+            font-size: 32px;
+        }
+
+        @include desktop {
+            font-size: 34px;
+        }
+
+        @include desktop_xl {
+            font-size: 42px;
+        }
 
         &:first-child {
             margin-top: 0;
@@ -1222,6 +1332,22 @@ nav {
                 font-weight: 350;
                 font-size: 18px;
                 margin-right: 90px;
+
+                @include mobile {
+                    font-size: 14px;
+                }
+
+                @include tablet_sm {
+                    font-size: 15px;
+                }
+
+                @include desktop {
+                    font-size: 16px;
+                }
+
+                @include desktop_xl {
+                    font-size: 17px;
+                }
             }
         }
     }
@@ -1285,6 +1411,94 @@ nav {
 
         @include desktop_xl {
             font-size: 22px;
+        }
+    }
+}
+
+.food-menu-switch a,
+.food-menu-close {
+    display: flex;
+    align-items: center;
+
+    i {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 16px;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: $color-FBFBFF;
+        }
+    }
+}
+
+.food-menu-switch {
+    display: none !important;
+    margin-bottom: 60px;
+    font-size: 20px;
+
+    @include mobile {
+        font-size: 18px;
+    }
+
+    @include tablet_md {
+        display: block !important;
+    }
+
+    a {
+        text-transform: uppercase;
+
+        i {
+            margin-right: 15px;
+        }
+    }
+
+    span {
+        height: 2px;
+        background: $color-FBFBFF;
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+}
+
+.food-menu-close {
+    position: fixed;
+    right: 40px;
+    top: 40px;
+
+    span {
+
+        &::before,
+        &::after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
         }
     }
 }

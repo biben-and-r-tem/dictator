@@ -456,8 +456,13 @@ header {
     padding-top: 135px;
     padding-bottom: 99px;
 
+    @include tablet {
+        padding-bottom: 230px;
+    }
+
     &_gallery-page {
         padding-top: 0;
+        padding-bottom: 99px !important;
     }
 }
 
@@ -486,6 +491,13 @@ header {
         bottom: 20px;
         right: 20px;
         z-index: 2;
+
+        @include tablet {
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
     }
 }
 

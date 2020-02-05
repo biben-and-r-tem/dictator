@@ -368,6 +368,7 @@ header {
 
 .gallery_gallery-page {
   padding-top: 0;
+  padding-bottom: 99px !important;
 }
 
 .gallery-items {
@@ -587,6 +588,17 @@ footer {
   .title-block::before,
   .title-block::after {
     display: none;
+  }
+
+  .gallery {
+    padding-bottom: 230px;
+  }
+
+  .gallery-items .btn {
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 }
 

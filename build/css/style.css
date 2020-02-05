@@ -2038,8 +2038,21 @@ nav .btn {
   background: #232323;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  overflow-y: scroll;
+  overflow-x: hidden;
   opacity: 0;
   visibility: hidden;
+}
+
+.main-top-block .title-block__title,
+.title-top-block .title-block__title {
+  font-family: 'Circe-Regular';
+  font-size: 72px;
+}
+
+.main-top-block .title-block__subtitle,
+.title-top-block .title-block__subtitle {
+  font-size: 30px;
 }
 
 .main-top-block {
@@ -2093,14 +2106,11 @@ nav .btn {
 }
 
 .main-top-block .title-block__title {
-  font-family: 'Circe-Regular';
-  font-size: 72px;
   text-shadow: 0px 0px 4px rgba(21, 23, 24, 0.43);
   text-transform: capitalize;
 }
 
 .main-top-block .title-block__subtitle {
-  font-size: 30px;
   text-shadow: 0px 0px 4px rgba(21, 23, 24, 0.43);
   text-transform: capitalize;
 }
@@ -2163,11 +2173,6 @@ nav .btn {
 
 .title-top-block .title-block {
   margin-bottom: 70px;
-}
-
-.title-top-block .title-block__title {
-  font-family: 'Circe-Regular';
-  font-size: 72px;
 }
 
 .title-top-block__bg {
@@ -2658,17 +2663,17 @@ nav .btn {
 }
 
 .food-menu-page-block .food-menu-items__item {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+  -webkit-flex-direction: row-reverse !important;
+  -ms-flex-direction: row-reverse !important;
+  flex-direction: row-reverse !important;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding-left: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .food-menu-page-block .food-menu-items__item:last-child {
@@ -2676,8 +2681,9 @@ nav .btn {
 }
 
 .food-menu-page-block .food-menu-items__text {
-  margin-left: 50px;
-  font-size: 20px;
+  margin-left: 50px !important;
+  margin-top: 0 !important;
+  height: initial !important;
 }
 
 .food-menu-page-block .food-menu-items__icon {
@@ -2805,6 +2811,103 @@ nav .btn {
   text-transform: uppercase;
   font-size: 24px;
   line-height: 100%;
+}
+
+.food-menu-switch a,
+.food-menu-close {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.food-menu-switch a i,
+.food-menu-close i {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 20px;
+  height: 16px;
+}
+
+.food-menu-switch a span,
+.food-menu-close span {
+  display: block;
+  width: 100%;
+}
+
+.food-menu-switch a span::before,
+.food-menu-switch a span::after,
+.food-menu-close span::before,
+.food-menu-close span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #FBFBFF;
+}
+
+.food-menu-switch {
+  display: none !important;
+  margin-bottom: 60px;
+  font-size: 20px;
+}
+
+.food-menu-switch a {
+  text-transform: uppercase;
+}
+
+.food-menu-switch a i {
+  margin-right: 15px;
+}
+
+.food-menu-switch span {
+  height: 2px;
+  background: #FBFBFF;
+}
+
+.food-menu-switch span::before {
+  top: 0;
+}
+
+.food-menu-switch span::after {
+  bottom: 0;
+}
+
+.food-menu-close {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+}
+
+.food-menu-close span::before,
+.food-menu-close span::after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.food-menu-close span::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.food-menu-close span::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .gallery {
@@ -3255,11 +3358,13 @@ footer {
     height: 46px;
   }
 
-  .main-top-block .title-block__title {
+  .main-top-block .title-block__title,
+  .title-top-block .title-block__title {
     font-size: 69px;
   }
 
-  .main-top-block .title-block__subtitle {
+  .main-top-block .title-block__subtitle,
+  .title-top-block .title-block__subtitle {
     font-size: 28px;
   }
 
@@ -3273,6 +3378,26 @@ footer {
 
   .promo-page-section .promo-page-block .contacts-block {
     font-size: 44px;
+  }
+
+  .food-menu-page-block .food-menu-items {
+    width: 37%;
+  }
+
+  .food-menu-page-block .food-menu-items__dropdown li a {
+    font-size: 17px;
+  }
+
+  .food-menu-page-block__content {
+    width: 59%;
+  }
+
+  .food-menu-page-block__title {
+    font-size: 42px;
+  }
+
+  .food-menu-page-block__list-right span:first-child {
+    font-size: 17px;
   }
 
   .food-menu-items__text {
@@ -3373,11 +3498,13 @@ footer {
     height: 48px;
   }
 
-  .main-top-block .title-block__title {
+  .main-top-block .title-block__title,
+  .title-top-block .title-block__title {
     font-size: 66px;
   }
 
-  .main-top-block .title-block__subtitle {
+  .main-top-block .title-block__subtitle,
+  .title-top-block .title-block__subtitle {
     font-size: 26px;
   }
 
@@ -3425,6 +3552,18 @@ footer {
     align-items: center;
     margin-top: 100px;
     margin-bottom: 60px;
+  }
+
+  .food-menu-page-block .food-menu-items__dropdown li a {
+    font-size: 16px;
+  }
+
+  .food-menu-page-block__title {
+    font-size: 34px;
+  }
+
+  .food-menu-page-block__list-right span:first-child {
+    font-size: 16px;
   }
 
   .food-menu-items__text {
@@ -3501,11 +3640,13 @@ footer {
     width: 62px;
   }
 
-  .main-top-block .title-block__title {
+  .main-top-block .title-block__title,
+  .title-top-block .title-block__title {
     font-size: 63px;
   }
 
-  .main-top-block .title-block__subtitle {
+  .main-top-block .title-block__subtitle,
+  .title-top-block .title-block__subtitle {
     font-size: 24px;
   }
 
@@ -3553,6 +3694,43 @@ footer {
   .promotions.promotions_page .events__item,
   .promotions.promotions_page .promotions__item {
     margin-bottom: 20px;
+  }
+
+  .food-menu-page-block .food-menu-items {
+    width: 25%;
+  }
+
+  .food-menu-page-block .food-menu-items__item {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .food-menu-page-block .food-menu-items__text {
+    margin-left: 0 !important;
+    text-align: left !important;
+    width: initial !important;
+  }
+
+  .food-menu-page-block .food-menu-items__icon {
+    display: none;
+  }
+
+  .food-menu-page-block .food-menu-items__dropdown {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  .food-menu-page-block .food-menu-items__dropdown li {
+    margin-bottom: 25px;
+  }
+
+  .food-menu-page-block__content {
+    width: 70%;
+  }
+
+  .food-menu-page-block__title {
+    font-size: 32px;
   }
 
   .club-scheme__inner {
@@ -3715,6 +3893,34 @@ footer {
   .promotions.promotions_page .promotions__item {
     margin-bottom: 15px;
   }
+
+  .food-menu-page-block .food-menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #232323;
+    padding: 60px 5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2000;
+  }
+
+  .food-menu-page-block__content {
+    width: 100%;
+  }
+
+  .food-menu-page-block__title {
+    text-align: left;
+  }
+
+  .food-menu-switch {
+    display: block !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3722,11 +3928,17 @@ footer {
     font-size: 16px;
   }
 
-  .main-top-block .title-block__title {
+  .menu-block__contacts {
+    margin-top: 40px;
+  }
+
+  .main-top-block .title-block__title,
+  .title-top-block .title-block__title {
     font-size: 50px;
   }
 
-  .main-top-block .title-block__subtitle {
+  .main-top-block .title-block__subtitle,
+  .title-top-block .title-block__subtitle {
     font-size: 22px;
   }
 
@@ -3746,6 +3958,18 @@ footer {
     font-size: 32px;
     margin-top: 80px;
     margin-bottom: 20px;
+  }
+
+  .food-menu-page-block .food-menu-items__dropdown li a {
+    font-size: 15px;
+  }
+
+  .food-menu-page-block__title {
+    font-size: 28px;
+  }
+
+  .food-menu-page-block__list-right span:first-child {
+    font-size: 15px;
   }
 
   .food-menu-items__text {
@@ -3807,8 +4031,20 @@ footer {
     font-size: 26px;
   }
 
+  .food-menu-page-block .food-menu-items__dropdown li a {
+    font-size: 15px;
+  }
+
+  .food-menu-page-block__list-right span:first-child {
+    font-size: 14px;
+  }
+
   .food-menu-items__text {
     font-size: 15px;
+  }
+
+  .food-menu-switch {
+    font-size: 18px;
   }
 
   .club-scheme__shame {
