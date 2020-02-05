@@ -14,12 +14,18 @@
     --swiper-navigation-size: fit-content;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Circe-Regular';
     font-weight: normal;
     font-size: 20px;
     line-height: 100%;
     color: $color-FBFBFF;
+    width: 100%;
 
     @include mobile {
         font-size: 15px;
