@@ -148,7 +148,7 @@ $(document).ready(function () {
                 ease: Linear.easeNone
             });
 
-        $('.food-menu-switch a').click(function (e) {
+        $('.food-menu-switch').click(function (e) {
             e.preventDefault();
             $('<a href="#" class="food-menu-close"><i><span></span></i></a>').prependTo(foodMenu);
             foodSwitchTl.play();

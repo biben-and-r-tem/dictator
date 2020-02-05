@@ -1415,10 +1415,8 @@ nav {
     }
 }
 
-.food-menu-switch a,
+.food-menu-switch,
 .food-menu-close {
-    display: flex;
-    align-items: center;
 
     i {
         position: relative;
@@ -1445,24 +1443,22 @@ nav {
 }
 
 .food-menu-switch {
-    display: none !important;
+    display: none;
     margin-bottom: 60px;
+    margin-left: 5%;
     font-size: 20px;
+    text-transform: uppercase;
 
     @include mobile {
         font-size: 18px;
     }
 
     @include tablet_md {
-        display: block !important;
+        display: flex;
     }
 
-    a {
-        text-transform: uppercase;
-
-        i {
-            margin-right: 15px;
-        }
+    i {
+        margin-right: 15px;
     }
 
     span {
@@ -1481,6 +1477,8 @@ nav {
 
 .food-menu-close {
     position: fixed;
+    display: flex;
+    align-items: center;
     right: 40px;
     top: 40px;
 
