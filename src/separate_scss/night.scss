@@ -27,6 +27,18 @@ header {
     }
 }
 
+.mob-switch {
+    border: 2px solid $color-CCA43B;
+
+    &::after {
+        border: 1px solid $color-CCA43B;
+    }
+
+    span {
+        background: $color-FBFBFF;
+    }
+}
+
 .phone {
     background-image: $gradient-1;
     color: $color-BB7B15;
@@ -227,6 +239,10 @@ header {
 
                 &__item {
                     width: 48%;
+
+                    @include tablet_md {
+                        width: 98%;
+                    }
                 }
             }
         }
@@ -445,6 +461,8 @@ header {
     }
 
     &__text-bg {
+        top: 0;
+        bottom: 0;
         width: 75%;
         transform: rotate(-45deg);
     }
@@ -561,6 +579,28 @@ header {
     &__icon {
         background: fade-out($color-0B0C0C, 0.8);
         border: 1px solid fade-out($color-BB7B15, 0.8);
+        width: 134px;
+        height: 134px;
+
+        @include mobile_sm {
+            width: 80px;
+            height: 80px;
+        }
+
+        @include tablet_sm {
+            width: 90px;
+            height: 90px;
+        }
+
+        @include desktop {
+            width: 100px;
+            height: 100px;
+        }
+
+        @include desktop_xl {
+            width: 114px;
+            height: 114px;
+        }
 
         &::before {
             background: fade-out($color-0B0C0C, 0.3);
@@ -767,6 +807,10 @@ header {
         justify-content: flex-end;
         z-index: 3;
         padding: 30px;
+
+        @include mobile {
+            align-items: center !important;
+        }
     }
 
     &__description-bg {

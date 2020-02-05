@@ -30,6 +30,18 @@ header {
     }
 }
 
+.mob-switch {
+    border: 2px solid $color-E2C391;
+
+    &::after {
+        border: 1px solid $color-E2C391;
+    }
+
+    span {
+        background: $color-FBFBFF;
+    }
+}
+
 .phone {
     background-image: $gradient-6;
     color: $color-E2C391;
@@ -89,6 +101,10 @@ header {
         width: 193px;
         height: 50px;
         display: block;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &::before {
@@ -164,15 +180,55 @@ header {
     padding: 42px;
     margin-top: 69px;
 
+    @include mobile_md {
+        padding: 15px;
+    }
+
+    @include tablet_md {
+        padding: 22px;
+    }
+
     .food-menu-items {
         border-bottom: 2px solid fade-out($color-828A95, 0.93);
-        padding-bottom: 50px;
+        padding: 0 40px 37px 40px;
+        width: 80%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include tablet_md {
+            width: 90%;
+        }
+
+        @include desktop {
+            padding: 0;
+            padding-bottom: 40px;
+        }
+
+        @include desktop_xl {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
 
         &__item {
             flex-direction: column-reverse;
             text-align: center;
-            margin-top: 112px;
-            margin-right: 120px;
+            margin-top: 72px;
+            margin-right: 50px;
+
+            @include mobile_sm {
+                margin-top: 30px;
+            }
+
+            @include mobile_md {
+                width: 100%;
+                margin-top: 40px;
+            }
+
+            @include desktop {
+                width: 50%;
+                margin-right: 0;
+                margin-top: 55px;
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -180,18 +236,37 @@ header {
         }
 
         &__text {
-            margin-top: 40px;
+            margin-top: 75px;
+
+            @include mobile_sm {
+                margin-top: 30px;
+            }
+
+            @include mobile_md {
+                margin-top: 40px;
+            }
+
+            @include desktop {
+                margin-top: 50px;
+            }
         }
     }
 }
 
 .food-menu-block {
     flex-direction: column;
-    height: 639px;
     background: fade-out($color-1E1E1E, 0.08);
+    padding-bottom: 63px;
 
     &__text-bg {
+        top: 32%;
         width: 100%;
+        max-width: 1454px;
+
+        @include desktop {
+            top: 0;
+            bottom: 0;
+        }
     }
 
     .title-block {
@@ -199,6 +274,11 @@ header {
         align-items: center;
         width: 80%;
         margin-top: 84px;
+        margin-bottom: 40px;
+
+        @include tablet_md {
+            width: 90%;
+        }
 
         &::before,
         &::after {
@@ -209,6 +289,7 @@ header {
             height: 2px;
             width: 100%;
             background: fade-out($color-828A95, 0.93);
+            display: block !important;
         }
 
         &__title {
@@ -251,6 +332,29 @@ header {
         background: fade-out($color-783519, 0.8);
         border: 1px solid fade-out($color-512D1D, 0.8);
 
+        width: 164px;
+        height: 164px;
+
+        @include mobile_sm {
+            width: 80px;
+            height: 80px;
+        }
+
+        @include tablet_sm {
+            width: 90px;
+            height: 90px;
+        }
+
+        @include desktop {
+            width: 130px;
+            height: 130px;
+        }
+
+        @include desktop_xl {
+            width: 144px;
+            height: 144px;
+        }
+
         &::before {
             background: fade-out($color-262626, 0.3);
             border: 2px solid fade-out($color-512D1D, 0.3);
@@ -278,6 +382,7 @@ header {
 
     &__text {
         color: $color-FBFBFF;
+        height: 45px;
     }
 }
 
@@ -287,7 +392,15 @@ header {
     &_page {
         .promotions {
             &__item {
-                width: 33%;
+                width: 31.333%;
+
+                @include tablet_md {
+                    width: 100%;
+                }
+
+                @include desktop {
+                    width: 48.8%;
+                }
             }
         }
     }
@@ -383,6 +496,14 @@ header {
     background-size: cover;
     box-shadow: $shadow-2;
     padding: 40px;
+
+    @include mobile_md {
+        padding: 15px;
+    }
+
+    @include tablet_md {
+        padding: 20px;
+    }
 }
 
 .about-us-block {
@@ -390,7 +511,15 @@ header {
     align-items: center;
     background: fade-out($color-1E1E1E, 0.08);
     padding: 30px;
-    padding-bottom: 80px;
+    padding-bottom: 80px !important;
+
+    @include mobile_md {
+        padding: 10px;
+    }
+
+    @include tablet_md {
+        padding: 15px;
+    }
 
     &::before,
     &:after {
@@ -422,7 +551,7 @@ header {
     .title-block {
         display: flex;
         align-items: center;
-        width: 80%;
+        width: 100%;
         margin-top: 20px;
 
         &::before,
@@ -434,6 +563,7 @@ header {
             height: 2px;
             width: 100%;
             background: fade-out($color-828A95, 0.93);
+            display: block !important;
         }
 
         &__title {

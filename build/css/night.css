@@ -22,6 +22,18 @@ header {
   --color-stop-3: #FFD445;
 }
 
+.mob-switch {
+  border: 2px solid #CCA43B;
+}
+
+.mob-switch::after {
+  border: 1px solid #CCA43B;
+}
+
+.mob-switch span {
+  background: #FBFBFF;
+}
+
 .phone {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(23.89%, #FFD445), color-stop(73.06%, #BB7B15));
   background-image: -o-linear-gradient(top, #FFD445 23.89%, #BB7B15 73.06%);
@@ -395,6 +407,8 @@ header {
 }
 
 .food-menu-block__text-bg {
+  top: 0;
+  bottom: 0;
   width: 75%;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -490,6 +504,8 @@ header {
 .food-menu-items__icon {
   background: rgba(11, 12, 12, 0.2);
   border: 1px solid rgba(187, 123, 21, 0.2);
+  width: 134px;
+  height: 134px;
 }
 
 .food-menu-items__icon::before {
@@ -854,6 +870,11 @@ footer::before {
     padding: 42px;
   }
 
+  .food-menu-items__icon {
+    width: 114px;
+    height: 114px;
+  }
+
   .gallery-items__description-title {
     font-size: 30px;
   }
@@ -872,6 +893,11 @@ footer::before {
     width: 340px;
     height: 340px;
     padding: 38px;
+  }
+
+  .food-menu-items__icon {
+    width: 100px;
+    height: 100px;
   }
 
   .gallery_three .gallery-items__item {
@@ -953,6 +979,10 @@ footer::before {
 }
 
 @media (max-width: 768px) {
+  .events.events_page .events__item {
+    width: 98%;
+  }
+
   .food-menu-items:nth-child(2) {
     padding-left: 5%;
   }
@@ -978,12 +1008,26 @@ footer::before {
     padding: 30px;
   }
 
+  .food-menu-items__icon {
+    width: 90px;
+    height: 90px;
+  }
+
   .gallery_three .gallery-items__item {
     width: 100%;
   }
 
   .gallery-items__description-title {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-items__description {
+    -webkit-box-align: center !important;
+    -webkit-align-items: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
   }
 }
 
@@ -1017,6 +1061,11 @@ footer::before {
     height: 210px;
     padding: 22px;
     margin: 0;
+  }
+
+  .food-menu-items__icon {
+    width: 80px;
+    height: 80px;
   }
 }
 /*# sourceMappingURL=night.css.map */

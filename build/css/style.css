@@ -1990,7 +1990,6 @@ nav .btn {
   width: 69px;
   height: 48px;
   margin-left: 24px;
-  border: 2px solid #CCA43B;
 }
 
 .mob-switch::after {
@@ -2000,14 +1999,12 @@ nav .btn {
   left: 3px;
   right: 3px;
   bottom: 3px;
-  border: 1px solid #CCA43B;
 }
 
 .mob-switch span {
   display: block;
   width: 60%;
   height: 2px;
-  background: #FBFBFF;
   margin-bottom: 6px;
 }
 
@@ -2052,6 +2049,7 @@ nav .btn {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
+  min-height: 568px;
 }
 
 .main-top-block__content {
@@ -2438,7 +2436,7 @@ nav .btn {
 .promotions.events_page .promotions__item,
 .promotions.promotions_page .events__item,
 .promotions.promotions_page .promotions__item {
-  margin-bottom: 20px;
+  margin-bottom: 34px;
 }
 
 .events__item,
@@ -2621,17 +2619,15 @@ nav .btn {
   z-index: 4;
 }
 
-.food-menu-block__text-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
 .food-menu-block .title-block {
   margin-bottom: 0;
+}
+
+.food-menu-block__text-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .food-menu-page-block {
@@ -2779,8 +2775,6 @@ nav .btn {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 134px;
-  height: 134px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -2808,8 +2802,9 @@ nav .btn {
 }
 
 .food-menu-items__text {
+  text-transform: uppercase;
   font-size: 24px;
-  color: #A0A1A4;
+  line-height: 100%;
 }
 
 .gallery {
@@ -3280,11 +3275,6 @@ footer {
     font-size: 44px;
   }
 
-  .food-menu-items__icon {
-    width: 114px;
-    height: 114px;
-  }
-
   .food-menu-items__text {
     font-size: 22px;
   }
@@ -3437,13 +3427,8 @@ footer {
     margin-bottom: 60px;
   }
 
-  .food-menu-items__icon {
-    width: 100px;
-    height: 100px;
-  }
-
   .food-menu-items__text {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .about-us-block__text {
@@ -3466,7 +3451,16 @@ footer {
 
 @media (max-width: 992px) {
   header .menu {
-    margin-bottom: 30px;
+    width: 80%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  header .menu li {
+    font-size: 20px;
   }
 
   header .menu-block {
@@ -3484,9 +3478,13 @@ footer {
     display: none;
   }
 
+  nav .btn {
+    margin-left: 0;
+  }
+
   .day-night-switch {
     padding-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .date-time {
@@ -3546,6 +3544,17 @@ footer {
     font-size: 17px;
   }
 
+  .events.events_page .events__item,
+  .events.events_page .promotions__item,
+  .events.promotions_page .events__item,
+  .events.promotions_page .promotions__item,
+  .promotions.events_page .events__item,
+  .promotions.events_page .promotions__item,
+  .promotions.promotions_page .events__item,
+  .promotions.promotions_page .promotions__item {
+    margin-bottom: 20px;
+  }
+
   .club-scheme__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3588,6 +3597,11 @@ footer {
     flex-direction: column;
   }
 
+  .map_map-page.map #map {
+    height: 100vh;
+    min-height: 568px;
+  }
+
   .map #map {
     height: 500px;
   }
@@ -3623,6 +3637,8 @@ footer {
   }
 
   footer .logo {
+    width: 84px;
+    height: 118px;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
@@ -3636,7 +3652,7 @@ footer {
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 50px;
   }
 
   footer .menu-block_left {
@@ -3652,11 +3668,52 @@ footer {
     -ms-flex-order: 2;
     order: 2;
   }
+
+  footer .menu {
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 768px) {
+  .menu-block__copiright {
+    margin-top: 50px;
+  }
+
+  .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .menu li:last-child {
+    margin-bottom: 0;
+  }
+
   .promo-page-section .promo-page-block .contacts-block {
     font-size: 36px;
+  }
+
+  .events.events_page .events__item,
+  .events.events_page .promotions__item,
+  .events.promotions_page .events__item,
+  .events.promotions_page .promotions__item,
+  .promotions.events_page .events__item,
+  .promotions.events_page .promotions__item,
+  .promotions.promotions_page .events__item,
+  .promotions.promotions_page .promotions__item {
+    margin-bottom: 15px;
   }
 }
 
@@ -3691,13 +3748,8 @@ footer {
     margin-bottom: 20px;
   }
 
-  .food-menu-items__icon {
-    width: 90px;
-    height: 90px;
-  }
-
   .food-menu-items__text {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .club-scheme__shame {
@@ -3747,8 +3799,16 @@ footer {
     font-size: 15px;
   }
 
+  header .menu li {
+    font-size: 18px;
+  }
+
   .promo-page-section .promo-page-block .contacts-block {
     font-size: 26px;
+  }
+
+  .food-menu-items__text {
+    font-size: 15px;
   }
 
   .club-scheme__shame {
@@ -3771,6 +3831,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .mob-switch {
+    margin-left: 15px;
+  }
+
   .promo-page-section .promo-page-block .logo {
     min-width: 300px;
   }
@@ -3794,6 +3858,30 @@ footer {
 }
 
 @media (max-width: 360px) {
+  header {
+    height: 80px;
+  }
+
+  header .menu li {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 51px;
+    height: 65px;
+  }
+
+  .btn {
+    font-size: 13px;
+    height: 40px;
+    padding: 0 15px;
+  }
+
+  .mob-switch {
+    width: 50px;
+    height: 40px;
+  }
+
   .promo-page-section .promo-page-block .logo {
     min-width: 274px;
   }
@@ -3802,9 +3890,8 @@ footer {
     font-size: 23px;
   }
 
-  .food-menu-items__icon {
-    width: 80px;
-    height: 80px;
+  .food-menu-items__text {
+    font-size: 14px;
   }
 
   .map-contacts-block {
