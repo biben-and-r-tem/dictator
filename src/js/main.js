@@ -1,3 +1,75 @@
+$(window).bind("load resize ready", function () {
+    $('.btn').each(function () {
+        var svg = $(this).find('svg'),
+            rect1 = $(this).find('rect:eq(0)'),
+            rect2 = $(this).find('rect:eq(1)'),
+            width = $(this).outerWidth(),
+            height = $(this).outerHeight();
+
+        svg.attr("width", width).attr("height", height).attr("viewBox", '0 0 ' + width + ' ' + height);
+        rect1.attr("width", width - 2).attr("height", height - 2);
+        rect2.attr("width", width - 11).attr("height", height - 11);
+
+    });
+
+    if ($(window).outerWidth() <= 1200 && !$('.menu-block').children().hasClass('mob-switch')) {
+        $('<a href="#" class="mob-switch"><span></span><span></span><span></span></a>').appendTo('header .menu-block_right');
+        $('<div class="mob-menu"></div>').appendTo('header nav');
+        $('header .menu').appendTo('.mob-menu');
+    } else if ($(window).outerWidth() >= 1200 && $('.menu-block').children().hasClass('mob-switch')) {
+        $('.mob-switch').remove();
+        $('header .menu').appendTo('header .menu-block_left');
+        $('header .date-time').prependTo('header .menu-block_right');
+        $('header .day-night-switch').prependTo('header .menu-block_right');
+        $('header .menu-block_left').prependTo('header nav');
+        $('.mob-menu').remove();
+    };
+
+    if ($(window).outerWidth() <= 992 && !$('.mob-menu').children().hasClass('header .day-night-switch')) {
+        $('header .day-night-switch').appendTo('.mob-menu');
+        $('header .date-time').appendTo('.mob-menu');
+    } else if ($(window).outerWidth() >= 992 && $('.menu-block').children().hasClass('mob-switch')) {
+        $('header .date-time').prependTo('header .menu-block_right');
+        $('header .day-night-switch').prependTo('header .menu-block_right');
+    }
+
+    if ($(window).outerWidth() <= 640 && !$('.mob-menu').children().hasClass('header .menu-block__contacts')) {
+        $('header .menu-block_left').appendTo('.mob-menu');
+    } else if ($(window).outerWidth() >= 640 && $('.menu-block').children().hasClass('mob-switch')) {
+        $('header .menu-block_left').prependTo('header nav');
+    }
+
+    $('.mob-switch').each(function (index, element) {
+        var mobSwitchTl = new TimelineMax({
+                paused: true
+            }),
+            mobMenu = $(this).parent().parent().find('.mob-menu');
+
+        mobSwitchTl
+            .to(mobMenu, 0, {
+                display: 'flex'
+            })
+            .to(mobMenu, 0.6, {
+                autoAlpha: 1,
+                ease: Linear.easeNone
+            });
+
+        element.animation = mobSwitchTl;
+    });
+
+    $('.mob-switch').click(function (e) {
+        e.preventDefault();
+
+        $(this).toggleClass('close');
+
+        if ($(this).hasClass('close')) {
+            this.animation.play();
+        } else {
+            this.animation.reverse();
+        }
+    });
+});
+
 $(document).ready(function () {
     if (!$('.main-top-block').length && $('.day-night-switch span:first').html() == 'Day') {
         $('header').css({
@@ -61,21 +133,6 @@ $(document).ready(function () {
     });
 });
 
-$(window).bind("load resize ready", function () {
-    $('.btn').each(function () {
-        var svg = $(this).find('svg'),
-            rect1 = $(this).find('rect:eq(0)'),
-            rect2 = $(this).find('rect:eq(1)'),
-            width = $(this).outerWidth(),
-            height = $(this).outerHeight();
-
-        svg.attr("width", width).attr("height", height).attr("viewBox", '0 0 ' + width + ' ' + height);
-        rect1.attr("width", width - 2).attr("height", height - 2);
-        rect2.attr("width", width - 11).attr("height", height - 11);
-
-    });
-});
-
 var swiper = new Swiper('.events .swiper-container', {
     loop: true,
     loopFillGroupWithBlank: true,
@@ -86,13 +143,17 @@ var swiper = new Swiper('.events .swiper-container', {
     },
 
     breakpoints: {
-        // when window width is >= 320px
         0: {
             slidesPerView: 1,
-            spaceBetween: 20
+            spaceBetween: 15
         },
-        // when window width is >= 640px
-        980: {
+        768: {
+            slidesPerView: 2,
+        },
+        992: {
+            spaceBetween: 20,
+        },
+        1200: {
             slidesPerView: 2,
             spaceBetween: 34,
         }
@@ -109,13 +170,15 @@ var swiper = new Swiper('.promotions .swiper-container', {
     },
 
     breakpoints: {
-        // when window width is >= 320px
         0: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            slidesPerView: 1,
+            spaceBetween: 15
         },
-        // when window width is >= 640px
-        980: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1200: {
             slidesPerView: 3,
             spaceBetween: 34,
         }

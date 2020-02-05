@@ -21,6 +21,18 @@ body {
     line-height: 100%;
     color: $color-FBFBFF;
 
+    @include mobile {
+        font-size: 15px;
+    }
+
+    @include tablet_sm {
+        font-size: 16px;
+    }
+
+    @include desktop {
+        font-size: 17px;
+    }
+
     @include desktop_xl {
         font-size: 18px;
     }
@@ -46,12 +58,24 @@ header {
     height: 140px;
     z-index: 1000;
 
+    @include desktop {
+        height: 100px;
+    }
+
     @include desktop_xl {
         height: 120px;
     }
 
     .menu {
         margin-top: 25px;
+
+        @include tablet {
+            margin-bottom: 30px;
+        }
+
+        @include desktop {
+            margin-top: 0;
+        }
 
         @include desktop_xl {
             margin-top: 16px;
@@ -60,12 +84,39 @@ header {
 
     .menu-block {
 
-        &:first-child {
-            width: 39%;
+        @include tablet {
+            order: 1;
         }
 
-        &:last-child {
+        @include desktop {
+            order: 2;
+        }
+
+        &_left {
+            width: 39%;
+
+            @include desktop {
+                width: initial;
+            }
+        }
+
+        &_right {
             width: 38%;
+
+            @include tablet {
+                width: initial;
+            }
+
+            @include desktop {
+                width: 59%;
+            }
+        }
+    }
+
+    .logo {
+
+        @include desktop {
+            order: 1;
         }
     }
 
@@ -78,6 +129,10 @@ header {
             height: 100%;
             width: 1px;
             background: $gradient-9;
+
+            @include tablet {
+                display: none;
+            }
         }
     }
 }
@@ -89,6 +144,14 @@ nav {
     justify-content: space-between;
     height: 100%;
     z-index: 2;
+
+    .btn {
+        margin-left: 30px;
+
+        @include desktop_xl {
+            margin-left: 15px;
+        }
+    }
 }
 
 .phone {
@@ -100,6 +163,10 @@ nav {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    @include desktop {
+        font-size: 24px;
+    }
+
     @include desktop_xl {
         font-size: 26px;
     }
@@ -107,7 +174,7 @@ nav {
 
 .menu-block {
 
-    &:last-child {
+    &_right {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -117,6 +184,11 @@ nav {
         display: flex;
         align-items: flex-end;
         height: fit-content;
+
+        @include desktop {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__adress {
@@ -126,6 +198,12 @@ nav {
         margin-left: 48px;
         margin-bottom: 5px;
         height: 20px;
+
+        @include desktop {
+            margin-left: 0;
+            margin-top: 6px;
+            font-size: 16px;
+        }
     }
 
     &__copiright {
@@ -158,6 +236,11 @@ nav {
     background-position: center !important;
     background-size: 100% 100% !important;
 
+    @include desktop {
+        width: 65px;
+        height: 83px;
+    }
+
     @include desktop_xl {
         width: 80px;
         height: 102px;
@@ -171,13 +254,26 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-right: 7%;
+    padding-right: 30px;
+
+    @include tablet {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    @include desktop_lg {
+        padding-right: 25px;
+    }
 
     span {
         font-family: "Theanodidot";
         font-size: 17px;
         font-weight: normal;
         line-height: 26px;
+
+        @include desktop {
+            font-size: 14px;
+        }
 
         @include desktop_xl {
             font-size: 15px;
@@ -191,6 +287,10 @@ nav {
             text-transform: uppercase;
             line-height: 46px;
 
+            @include desktop {
+                font-size: 24px;
+            }
+
             @include desktop_xl {
                 font-size: 26px;
             }
@@ -203,6 +303,15 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-left: 30px;
+
+    @include tablet {
+        margin-left: 0;
+    }
+
+    @include desktop_xl {
+        margin-left: 15px;
+    }
 
     span {
         &:last-child {
@@ -228,6 +337,16 @@ nav {
     border-radius: 0;
     background: transparent;
     cursor: pointer;
+
+    @include tablet {
+        font-size: 14px;
+        height: 44px;
+    }
+
+    @include desktop {
+        font-size: 15px;
+        height: 48px;
+    }
 
     @include desktop_xl {
         font-size: 16px;
@@ -277,6 +396,62 @@ nav {
     }
 }
 
+.mob-switch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 69px;
+    height: 48px;
+    margin-left: 24px;
+    border: 2px solid $color-CCA43B;
+
+    @include tablet {
+        height: 44px;
+        width: 62px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        border: 1px solid $color-CCA43B;
+    }
+
+    span {
+        display: block;
+        width: 60%;
+        height: 2px;
+        background: $color-FBFBFF;
+        margin-bottom: 6px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.mob-menu {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 60px 0;
+    background: $color-232323;
+    box-shadow: $shadow-2;
+    opacity: 0;
+    visibility: hidden;
+}
+
 .main-top-block {
     position: relative;
     display: flex;
@@ -314,6 +489,18 @@ nav {
             text-shadow: $shadow-1;
             text-transform: capitalize;
 
+            @include tablet_sm {
+                font-size: 50px;
+            }
+
+            @include tablet {
+                font-size: 63px;
+            }
+
+            @include desktop {
+                font-size: 66px;
+            }
+
             @include desktop_xl {
                 font-size: 69px;
             }
@@ -323,6 +510,18 @@ nav {
             font-size: 30px;
             text-shadow: $shadow-1;
             text-transform: capitalize;
+
+            @include tablet_sm {
+                font-size: 22px;
+            }
+
+            @include tablet {
+                font-size: 24px;
+            }
+
+            @include desktop {
+                font-size: 26px;
+            }
 
             @include desktop_xl {
                 font-size: 28px;
@@ -363,6 +562,18 @@ nav {
         font-size: 60px;
         line-height: 100%;
 
+        @include tablet_sm {
+            font-size: 37px;
+        }
+
+        @include tablet {
+            font-size: 50px;
+        }
+
+        @include desktop {
+            font-size: 53px;
+        }
+
         @include desktop_xl {
             font-size: 56px;
         }
@@ -371,6 +582,18 @@ nav {
     &__subtitle {
         font-size: 32px;
         line-height: 100%;
+
+        @include tablet_sm {
+            font-size: 22px;
+        }
+
+        @include tablet {
+            font-size: 26px;
+        }
+
+        @include desktop {
+            font-size: 28px;
+        }
 
         @include desktop_xl {
             font-size: 30px;
@@ -409,6 +632,10 @@ nav {
 .container {
     width: 81%;
     margin: 0 auto;
+
+    @include desktop {
+        width: 90%;
+    }
 }
 
 .container-big {
@@ -698,6 +925,7 @@ nav {
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 2;
         }
 
         &::after {
@@ -705,6 +933,7 @@ nav {
             left: 13px;
             right: 13px;
             bottom: 13px;
+            z-index: 3;
         }
 
         &:hover {
@@ -725,6 +954,8 @@ nav {
                 opacity: 0;
                 visibility: hidden;
             }
+
+            z-index: 4;
         }
 
         &_content,
@@ -939,6 +1170,26 @@ nav {
         height: 134px;
         transform: rotate(45deg);
 
+        @include mobile_sm {
+            width: 80px;
+            height: 80px;
+        }
+
+        @include tablet_sm {
+            width: 90px;
+            height: 90px;
+        }
+
+        @include desktop {
+            width: 100px;
+            height: 100px;
+        }
+
+        @include desktop_xl {
+            width: 114px;
+            height: 114px;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -962,6 +1213,18 @@ nav {
     &__text {
         font-size: 24px;
         color: $color-A0A1A4;
+
+        @include tablet_sm {
+            font-size: 18px;
+        }
+
+        @include desktop {
+            font-size: 20px;
+        }
+
+        @include desktop_xl {
+            font-size: 22px;
+        }
     }
 }
 
@@ -1019,14 +1282,21 @@ nav {
     z-index: 3;
 
     &__text {
-        width: 50%;
+
+        @include desktop {
+            width: 100% !important;
+        }
     }
 
     &__video {
-        width: 50.4%;
         height: fit-content;
         position: relative;
         overflow: hidden;
+
+        @include desktop {
+            width: 100% !important;
+            max-height: 340px;
+        }
 
         &::before {
             content: '';
@@ -1038,12 +1308,6 @@ nav {
             top: 13px;
             left: 13px;
             bottom: 13px;
-        }
-
-        &:hover {
-            img {
-                transform: scale(1.15);
-            }
         }
 
         img {
@@ -1078,6 +1342,11 @@ nav {
         justify-content: space-between;
         position: relative;
         z-index: 2;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__title-block-wrapper {
@@ -1086,10 +1355,60 @@ nav {
 
     &__shame {
         width: 75%;
+
+        @include mobile {
+            padding-top: 50%;
+            padding-bottom: 60%;
+        }
+
+        @include tablet_sm {
+            padding-top: 40%;
+            padding-bottom: 55%;
+        }
+
+        @include tablet {
+            width: 100%;
+            padding-top: 30%;
+            padding-bottom: 35%;
+        }
+
+        svg {
+
+            @include mobile {
+                width: 200%;
+                margin-left: -50%;
+            }
+
+            @include tablet_sm {
+                width: 150%;
+                margin-left: -25%;
+            }
+
+            @include tablet {
+                transform: rotate(90deg);
+                width: 100%;
+            }
+        }
     }
 
     .form-block {
         width: 23%;
+
+        @include mobile_md {
+            width: 90%;
+        }
+
+        @include mobile {
+            width: 80%;
+        }
+
+        @include tablet_sm {
+            width: 60%;
+        }
+
+        @include tablet {
+            width: 50%;
+        }
     }
 }
 
@@ -1113,6 +1432,18 @@ nav {
             line-height: 100%;
             margin-bottom: 46px;
             color: $color-FBFBFF;
+
+            @include mobile {
+                font-size: 15px;
+            }
+
+            @include tablet_sm {
+                font-size: 16px;
+            }
+
+            @include desktop {
+                font-size: 17px;
+            }
 
             @include desktop_xl {
                 font-size: 18px;
@@ -1146,6 +1477,12 @@ nav {
     position: relative;
     height: 599px;
 
+    @include tablet {
+        height: initial;
+        display: flex;
+        flex-direction: column;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -1163,6 +1500,10 @@ nav {
     #map {
         width: 100%;
         height: 100%;
+
+        @include tablet {
+            height: 500px;
+        }
     }
 
 
@@ -1172,11 +1513,35 @@ nav {
     position: absolute;
     top: -43px;
     left: 0;
-    width: 654px;
+    width: 41.32%;
+    max-width: 654px;
+    min-width: 470px;
     height: 532px;
     padding: 43px 43px 43px 0;
     background: $color-0F0E0C;
     z-index: 2;
+
+    @include mobile_sm {
+        padding: 15px;
+    }
+
+    @include mobile_md {
+        padding: 23px;
+    }
+
+    @include tablet_sm {
+        padding: 33px;
+    }
+
+    @include tablet {
+        position: relative;
+        width: 100%;
+        max-width: initial;
+        min-width: initial;
+        top: 0;
+        padding: 43px;
+        order: 2;
+    }
 
     &_map-page {
         top: 28%;
@@ -1212,6 +1577,18 @@ nav {
         font-size: 48px;
         line-height: 100%;
         margin-bottom: 30px;
+
+        @include tablet_sm {
+            font-size: 30px;
+        }
+
+        @include tablet {
+            font-size: 40px;
+        }
+
+        @include desktop {
+            font-size: 42px;
+        }
 
         @include desktop_xl {
             font-size: 44px;
@@ -1275,4 +1652,42 @@ nav {
 
 footer {
     height: 124px;
+
+    @include tablet {
+        height: initial;
+        padding: 60px 0;
+    }
+
+    nav {
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    .logo {
+        @include tablet {
+            order: 1;
+        }
+    }
+
+    .menu-block {
+
+        @include tablet {
+            flex-direction: column;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        &_left {
+            @include tablet {
+                order: 3;
+            }
+        }
+
+        &_right {
+            @include tablet {
+                order: 2;
+            }
+        }
+    }
 }

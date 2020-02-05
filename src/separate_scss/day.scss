@@ -139,7 +139,7 @@ header {
     flex-direction: column;
     align-items: center;
     color: $color-E2C391;
-    margin-bottom: 24px;
+    margin-bottom: 35px;
     text-shadow: $shadow-1;
 
     &::after {
@@ -282,7 +282,7 @@ header {
 }
 
 .promotions {
-    padding-top: 90px;
+    padding-top: 123px;
 
     &_page {
         .promotions {
@@ -293,6 +293,7 @@ header {
     }
 
     &__item {
+        box-shadow: $shadow-2;
 
         &::before {
             background: $gradient-8;
@@ -319,7 +320,7 @@ header {
     }
 
     .swiper-buttons {
-        padding-top: 190px;
+        padding-top: 211px;
 
         .swiper-button-next,
         .swiper-button-prev {
@@ -339,8 +340,8 @@ header {
 }
 
 .gallery {
-    padding-top: 200px;
-    padding-bottom: 123px;
+    padding-top: 135px;
+    padding-bottom: 99px;
 
     &_gallery-page {
         padding-top: 0;
@@ -353,6 +354,14 @@ header {
 
     &__item {
         width: 33.333%;
+
+        @include tablet_sm {
+            width: 100%;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
 
         &::after {
             border: 1px solid $color-E2C391;
@@ -378,8 +387,9 @@ header {
 
 .about-us-block {
     position: relative;
+    align-items: center;
     background: fade-out($color-1E1E1E, 0.08);
-    padding: 15px;
+    padding: 30px;
     padding-bottom: 80px;
 
     &::before,
@@ -432,7 +442,21 @@ header {
         }
     }
 
+    &__text {
+        width: 55%;
+
+        @include desktop {
+            order: 2;
+        }
+    }
+
     &__video {
+        width: 40%;
+
+        @include desktop {
+            order: 1;
+            margin-bottom: 25px;
+        }
 
         &::before {
             right: 13px;
@@ -442,7 +466,9 @@ header {
 }
 
 .club-scheme {
+    padding-top: 55px;
     background: url(../img/club-shame-bg-day.png);
+    box-shadow: $shadow-2;
 
     &::after {
         background: url(../img/pattern-day-bg-2.svg);

@@ -133,7 +133,7 @@ header {
   -ms-flex-align: center;
   align-items: center;
   color: #E2C391;
-  margin-bottom: 24px;
+  margin-bottom: 35px;
   text-shadow: 0px 0px 4px rgba(21, 23, 24, 0.43);
 }
 
@@ -277,11 +277,16 @@ header {
 }
 
 .promotions {
-  padding-top: 90px;
+  padding-top: 123px;
 }
 
 .promotions_page .promotions__item {
   width: 33%;
+}
+
+.promotions__item {
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
 .promotions__item::before {
@@ -314,7 +319,7 @@ header {
 }
 
 .promotions .swiper-buttons {
-  padding-top: 190px;
+  padding-top: 211px;
 }
 
 .promotions .swiper-buttons .swiper-button-next,
@@ -330,8 +335,8 @@ header {
 }
 
 .gallery {
-  padding-top: 200px;
-  padding-bottom: 123px;
+  padding-top: 135px;
+  padding-bottom: 99px;
 }
 
 .gallery_gallery-page {
@@ -371,8 +376,12 @@ header {
 
 .about-us-block {
   position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background: rgba(30, 30, 30, 0.92);
-  padding: 15px;
+  padding: 30px;
   padding-bottom: 80px;
 }
 
@@ -432,13 +441,24 @@ header {
   margin: 0 36px;
 }
 
+.about-us-block__text {
+  width: 55%;
+}
+
+.about-us-block__video {
+  width: 40%;
+}
+
 .about-us-block__video::before {
   right: 13px;
   border: 1px solid #E2C391;
 }
 
 .club-scheme {
+  padding-top: 55px;
   background: url(../img/club-shame-bg-day.png);
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
 
 .club-scheme::after {
@@ -471,5 +491,32 @@ header {
 
 footer {
   background: #0F0E0C;
+}
+
+@media (max-width: 1200px) {
+  .gallery-items__item {
+    width: 50%;
+  }
+
+  .about-us-block__text {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .about-us-block__video {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-items__item {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=day.css.map */

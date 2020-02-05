@@ -4,6 +4,7 @@
 
 body {
     background: $color-0A0908;
+    overflow-x: hidden;
 }
 
 header {
@@ -306,9 +307,37 @@ header {
         right: 0;
         bottom: 0;
         margin: auto;
-        width: 1142px;
-        height: 685.4px;
+        width: 100%;
+        max-width: 1142px;
+        height: 100%;
+        max-height: 686px;
         z-index: 2;
+
+        @include mobile_sm {
+            top: -33.6%;
+        }
+
+        @include mobile_md {
+            top: -31.6%;
+        }
+
+        @include tablet_sm {
+            top: -25.6%;
+        }
+
+        @include tablet {
+            bottom: initial;
+            top: -21.1%;
+            width: 100%;
+        }
+
+        @include desktop {
+            width: 94%;
+        }
+
+        @include desktop_xl {
+            width: 78%;
+        }
     }
 
     &__bg-left,
@@ -332,6 +361,20 @@ header {
     justify-content: center;
     height: 550px;
 
+    @include tablet {
+        flex-wrap: wrap;
+        width: 100%;
+        height: fit-content;
+    }
+
+    @include desktop {
+        height: 440px;
+    }
+
+    @include desktop_xl {
+        height: 490px;
+    }
+
     &__rect {
         width: 440px;
         height: 440px;
@@ -339,6 +382,42 @@ header {
         transform: rotate(45deg);
         overflow: hidden;
         order: 2;
+
+        @include mobile_sm {
+            width: 210px;
+            height: 210px;
+            padding: 22px;
+            margin: 0;
+        }
+
+        @include mobile_md {
+            width: 240px;
+            height: 240px;
+            padding: 26px;
+        }
+
+        @include tablet_sm {
+            width: 290px;
+            height: 290px;
+            padding: 30px;
+        }
+
+        @include tablet {
+            order: 1;
+            margin: 0px 10%;
+        }
+
+        @include desktop {
+            width: 340px;
+            height: 340px;
+            padding: 38px;
+        }
+
+        @include desktop_xl {
+            width: 380px;
+            height: 380px;
+            padding: 42px;
+        }
 
         &::before {
             content: '';
@@ -419,8 +498,25 @@ header {
     justify-content: space-between;
     height: 100%;
 
+    @include tablet {
+        width: 50%;
+    }
+
     &:nth-child(2) {
         order: 1;
+
+        @include mobile_md {
+            padding-left: 0;
+        }
+
+        @include tablet_md {
+            padding-left: 5%;
+        }
+
+        @include tablet {
+            order: 2;
+            padding-left: 15%;
+        }
 
         .food-menu-items {
             &__text {
@@ -433,6 +529,18 @@ header {
     &:nth-child(3) {
         order: 3;
 
+        @include mobile_md {
+            padding-right: 0;
+        }
+
+        @include tablet_md {
+            padding-right: 5%;
+        }
+
+        @include tablet {
+            padding-right: 15%;
+        }
+
         .food-menu-items {
             &__item {
                 flex-direction: row-reverse;
@@ -441,6 +549,13 @@ header {
             &__text {
                 margin-left: 50px;
             }
+        }
+    }
+
+    &__item {
+        @include tablet {
+            flex-direction: column-reverse !important;
+            margin-top: 60px;
         }
     }
 
@@ -476,6 +591,12 @@ header {
     &__text {
         width: 110px;
         color: $color-A0A1A4;
+
+        @include tablet {
+            margin: 40px 0 0 0 !important;
+            text-align: center !important;
+            height: 40px;
+        }
     }
 }
 
@@ -487,6 +608,14 @@ header {
 
             &__item {
                 width: 33.333%;
+
+                @include tablet_sm {
+                    width: 100%;
+                }
+
+                @include desktop {
+                    width: 50%;
+                }
             }
         }
     }
@@ -592,6 +721,11 @@ header {
     &__item {
         width: 50%;
 
+        @include tablet_md {
+            width: 100%;
+            max-height: 400px;
+        }
+
         &::after {
             border: 1px solid $color-BB7B15;
         }
@@ -658,6 +792,18 @@ header {
         line-height: 100%;
         margin-bottom: 14px;
 
+        @include tablet_sm {
+            font-size: 22px;
+        }
+
+        @include tablet {
+            font-size: 26px;
+        }
+
+        @include desktop {
+            font-size: 28px;
+        }
+
         @include desktop_xl {
             font-size: 30px;
         }
@@ -699,11 +845,17 @@ header {
     }
 
     &__text {
+        width: 50%;
         color: $color-A0A1A4;
     }
 
     &__video {
+        width: 50.4%;
         margin-right: -11.69%;
+
+        @include desktop {
+            margin-top: 25px;
+        }
 
         &::before,
         &::after {
@@ -715,6 +867,10 @@ header {
         &::before {
             right: -13px;
             border: 1px solid $color-BB7B15;
+
+            @include desktop {
+                right: 13px;
+            }
         }
 
         &::after {
@@ -729,6 +885,12 @@ header {
             background-size: 100% 100%;
             width: 47px;
             height: 98px;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.15);
+            }
         }
     }
 
