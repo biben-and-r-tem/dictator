@@ -1020,6 +1020,11 @@ footer::before {
     margin-top: 180px;
   }
 
+  .food-menu::before,
+  .food-menu::after {
+    bottom: -27px;
+  }
+
   .food-menu-items:nth-child(2) {
     padding-left: 5%;
   }
