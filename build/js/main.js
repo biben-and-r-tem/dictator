@@ -27677,7 +27677,7 @@ $(window).bind("load resize ready", function () {
         rect1.attr("width", width - 2).attr("height", height - 2);
         rect2.attr("width", width - 11).attr("height", height - 11);
 
-        if ($(this).parent().parent().parent().has('header') || $(this).parent().parent().parent().has('footer')) {
+        if ($(this).parent().hasClass('menu-block')) {
             $(this).click(function (e) {
                 e.preventDefault();
                 popUpTl.play();
