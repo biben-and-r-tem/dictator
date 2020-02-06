@@ -45,6 +45,9 @@ $(window).bind("load resize ready", function () {
             .to(mobMenu, 0, {
                 display: 'flex'
             })
+            .to(header, 0, {
+                position: 'fixed'
+            })
             .to(header, 0.6, {
                 background: mabMenuColor,
                 ease: Linear.easeNone
@@ -66,8 +69,7 @@ $(window).bind("load resize ready", function () {
                 ease: Linear.easeNone
             }, 0)
             .to(span2, 0, {
-                display: 'none',
-                ease: Linear.easeNone
+                display: 'none'
             })
             .to(span1, 0.4, {
                 rotation: 45,
