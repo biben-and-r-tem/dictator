@@ -1,3 +1,8 @@
+window.onload = function () {
+    var preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+};
+
 $(window).bind("load resize ready", function () {
 
     if ($(window).outerWidth() <= 1200 && !$('.menu-block').children().hasClass('mob-switch')) {
