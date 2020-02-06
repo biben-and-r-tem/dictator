@@ -547,8 +547,6 @@ nav {
     width: 100%;
     height: fit-content;
     padding: 60px 0;
-    background: $color-232323;
-    box-shadow: $shadow-2;
     opacity: 0;
     visibility: hidden;
 
@@ -725,6 +723,14 @@ nav {
     justify-content: center;
     align-items: flex-end;
     height: 390px;
+
+    @include tablet_md {
+        height: 300px;
+    }
+
+    @include tablet {
+        height: 320px;
+    }
 
     .title-block {
         margin-bottom: 70px;
@@ -1475,13 +1481,13 @@ nav {
     }
 }
 
-.food-menu-items__item.active+.food-menu-items__dropdown {
-    display: block;
-}
+// .food-menu-items__item.active+.food-menu-items__dropdown {
+//     display: block;
+// }
 
-.food-menu-items__dropdown {
-    display: none;
-}
+// .food-menu-items__dropdown {
+//     display: none;
+// }
 
 .food-menu-switch,
 .close-popup {
@@ -1665,6 +1671,11 @@ nav {
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-size: cover !important;
+
+    @include tablet_md {
+        margin-top: 90px;
+        padding-bottom: 120px;
+    }
 
     &::after {
         content: '';

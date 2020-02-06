@@ -39,6 +39,10 @@ header {
     }
 }
 
+.mob-menu {
+    background: $gradient-10;
+}
+
 .phone {
     background-image: $gradient-1;
     color: $color-BB7B15;
@@ -305,6 +309,10 @@ header {
     justify-content: center;
     position: relative;
     margin-top: 216px;
+
+    @include tablet_md {
+        margin-top: 180px;
+    }
 
     &::before,
     &::after {
@@ -733,11 +741,21 @@ header {
             padding-bottom: 123px;
             margin-top: 55px;
             margin-bottom: 127px;
+
+            @include tablet_md {
+                padding-top: 100px;
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
         }
 
         &_bg-el {
             padding-top: 0;
             padding-bottom: 253px;
+
+            @include tablet_md {
+                margin-bottom: -90px;
+            }
 
             &::before,
             &::after {
@@ -759,6 +777,10 @@ header {
         &_bg-el-bottom {
             padding-top: 0;
             padding-bottom: 253px;
+
+            @include tablet_md {
+                margin-bottom: -90px;
+            }
 
             &::before {
                 display: none;
@@ -988,6 +1010,10 @@ header {
         width: 100%;
         color: $color-A0A1A4;
         margin-top: 136px;
+
+        @include tablet_md {
+            margin-top: 60px;
+        }
     }
 }
 

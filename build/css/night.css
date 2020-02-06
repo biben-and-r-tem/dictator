@@ -34,6 +34,12 @@ header {
   background: #FBFBFF;
 }
 
+.mob-menu {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(10, 9, 8, 0.97)), to(rgba(10, 9, 8, 0.97)));
+  background: -o-linear-gradient(top, rgba(10, 9, 8, 0.97) 0%, rgba(10, 9, 8, 0.97) 100%);
+  background: linear-gradient(180deg, rgba(10, 9, 8, 0.97) 0%, rgba(10, 9, 8, 0.97) 100%);
+}
+
 .phone {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(23.89%, #FFD445), color-stop(73.06%, #BB7B15));
   background-image: -o-linear-gradient(top, #FFD445 23.89%, #BB7B15 73.06%);
@@ -1010,6 +1016,10 @@ footer::before {
     width: 98%;
   }
 
+  .food-menu {
+    margin-top: 180px;
+  }
+
   .food-menu-items:nth-child(2) {
     padding-left: 5%;
   }
@@ -1018,9 +1028,27 @@ footer::before {
     padding-right: 5%;
   }
 
+  .gallery.gallery_bg {
+    padding-top: 100px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .gallery.gallery_bg-el {
+    margin-bottom: -90px;
+  }
+
+  .gallery.gallery_bg-el-bottom {
+    margin-bottom: -90px;
+  }
+
   .gallery-items__item {
     width: 100%;
     max-height: 400px;
+  }
+
+  .about-us-block__text-bottom {
+    margin-top: 60px;
   }
 }
 

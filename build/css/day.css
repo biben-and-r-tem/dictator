@@ -37,6 +37,12 @@ header {
   background: #FBFBFF;
 }
 
+.mob-menu {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 35, 35, 0.97)), to(rgba(35, 35, 35, 0.97)));
+  background: -o-linear-gradient(top, rgba(35, 35, 35, 0.97) 0%, rgba(35, 35, 35, 0.97) 100%);
+  background: linear-gradient(180deg, rgba(35, 35, 35, 0.97) 0%, rgba(35, 35, 35, 0.97) 100%);
+}
+
 .phone {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#E2C391), to(#715B37));
   background-image: -o-linear-gradient(top, #E2C391 0%, #715B37 100%);
@@ -390,7 +396,7 @@ header {
 }
 
 .gallery_gallery-page {
-  padding-top: 0;
+  padding-top: 0 !important;
   padding-bottom: 99px !important;
 }
 
@@ -642,8 +648,17 @@ footer {
     width: 90%;
   }
 
+  .promotions {
+    padding-top: 80px;
+  }
+
   .promotions_page .promotions__item {
     width: 100%;
+  }
+
+  .gallery {
+    padding-top: 80px;
+    padding-bottom: 200px;
   }
 
   .about-us {

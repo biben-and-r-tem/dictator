@@ -42,6 +42,10 @@ header {
     }
 }
 
+.mob-menu {
+    background: $gradient-11;
+}
+
 .phone {
     background-image: $gradient-6;
     color: $color-E2C391;
@@ -404,6 +408,10 @@ header {
 .promotions {
     padding-top: 123px;
 
+    @include tablet_md {
+        padding-top: 80px;
+    }
+
     &_page {
         .promotions {
             &__item {
@@ -491,12 +499,17 @@ header {
     padding-top: 135px;
     padding-bottom: 99px;
 
+    @include tablet_md {
+        padding-top: 80px;
+        padding-bottom: 200px;
+    }
+
     @include tablet {
         padding-bottom: 230px;
     }
 
     &_gallery-page {
-        padding-top: 0;
+        padding-top: 0 !important;
         padding-bottom: 99px !important;
     }
 }
