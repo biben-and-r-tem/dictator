@@ -44,6 +44,21 @@ header {
     color: $color-BB7B15;
 }
 
+.menu {
+    li {
+        a {
+            &:hover {
+                color: $color-FFD445;
+
+                &::after {
+                    background: $color-FFD445;
+                }
+
+            }
+        }
+    }
+}
+
 .menu-block {
     &__adress {
         color: $color-6BADB8;
@@ -639,6 +654,26 @@ header {
     }
 }
 
+.food-menu-switch,
+.close-popup {
+
+    span {
+
+        &::before,
+        &::after {
+            background: $color-CCA43B;
+        }
+    }
+}
+
+.food-menu-switch {
+    color: $color-CCA43B;
+
+    span {
+        background: $color-CCA43B;
+    }
+}
+
 .gallery {
 
     &_three {
@@ -1026,5 +1061,14 @@ footer {
         // background: fade-out($color-171513, 0.8);
         background: $color-171513;
         z-index: 1;
+    }
+}
+
+.fancybox-navigation {
+    .fancybox-button {
+
+        span {
+            background: url(../img/left-arrow-night.svg);
+        }
     }
 }

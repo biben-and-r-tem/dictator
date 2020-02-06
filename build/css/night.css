@@ -41,6 +41,14 @@ header {
   color: #BB7B15;
 }
 
+.menu li a:hover {
+  color: #FFD445;
+}
+
+.menu li a:hover::after {
+  background: #FFD445;
+}
+
 .menu-block__adress {
   color: #6BADB8;
 }
@@ -534,6 +542,21 @@ header {
   color: #A0A1A4;
 }
 
+.food-menu-switch span::before,
+.food-menu-switch span::after,
+.close-popup span::before,
+.close-popup span::after {
+  background: #CCA43B;
+}
+
+.food-menu-switch {
+  color: #CCA43B;
+}
+
+.food-menu-switch span {
+  background: #CCA43B;
+}
+
 .gallery_three .gallery-items__item {
   width: 33.333%;
 }
@@ -853,6 +876,10 @@ footer::before {
   mask-position: left;
   background: #171513;
   z-index: 1;
+}
+
+.fancybox-navigation .fancybox-button span {
+  background: url(../img/left-arrow-night.svg);
 }
 
 @media (max-width: 1440px) {

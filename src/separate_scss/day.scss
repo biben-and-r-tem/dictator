@@ -47,6 +47,21 @@ header {
     color: $color-E2C391;
 }
 
+.menu {
+    li {
+        a {
+            &:hover {
+                color: $color-E2C391;
+
+                &::after {
+                    background: $color-E2C391;
+                }
+
+            }
+        }
+    }
+}
+
 .menu-block {
     &__adress {
         color: $color-ECE5F0;
@@ -452,6 +467,26 @@ header {
     }
 }
 
+.food-menu-switch,
+.close-popup {
+
+    span {
+
+        &::before,
+        &::after {
+            background: $color-E2C391;
+        }
+    }
+}
+
+.food-menu-switch {
+    color: $color-E2C391;
+
+    span {
+        background: $color-E2C391;
+    }
+}
+
 .gallery {
     padding-top: 135px;
     padding-bottom: 99px;
@@ -660,4 +695,13 @@ header {
 
 footer {
     background: $color-0F0E0C;
+}
+
+.fancybox-navigation {
+    .fancybox-button {
+
+        span {
+            background: url(../img/left-arrow-day.svg);
+        }
+    }
 }
