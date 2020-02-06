@@ -1693,6 +1693,11 @@ nav {
     background-position: center !important;
     background-size: cover !important;
 
+    @include mobile {
+        margin-top: 80px;
+        padding-bottom: 80px;
+    }
+
     @include tablet_md {
         margin-top: 90px;
         padding-bottom: 120px;

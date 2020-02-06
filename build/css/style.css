@@ -4191,6 +4191,11 @@ footer {
     font-size: 18px;
   }
 
+  .club-scheme {
+    margin-top: 80px;
+    padding-bottom: 80px;
+  }
+
   .club-scheme__shame {
     padding-top: 50%;
     padding-bottom: 60%;

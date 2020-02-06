@@ -1087,6 +1087,16 @@ footer::before {
 }
 
 @media (max-width: 576px) {
+  .food-menu {
+    margin-top: 140px;
+  }
+
+  .gallery.gallery_bg {
+    padding-top: 80px;
+    margin-top: 0;
+    padding-bottom: 80px;
+  }
+
   .gallery-items__description {
     -webkit-box-align: center !important;
     -webkit-align-items: center !important;

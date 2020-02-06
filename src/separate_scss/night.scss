@@ -314,6 +314,10 @@ header {
     position: relative;
     margin-top: 216px;
 
+    @include mobile {
+        margin-top: 140px;
+    }
+
     @include tablet_md {
         margin-top: 180px;
     }
@@ -749,6 +753,12 @@ header {
             padding-bottom: 123px;
             margin-top: 55px;
             margin-bottom: 127px;
+
+            @include mobile {
+                padding-top: 80px;
+                margin-top: 0;
+                padding-bottom: 80px;
+            }
 
             @include tablet_md {
                 padding-top: 100px;
