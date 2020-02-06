@@ -799,6 +799,14 @@ header {
         bottom: 0;
         height: 154px;
         width: 100%;
+
+        @include mobile_sm {
+            height: 130px;
+        }
+
+        @include mobile_md {
+            height: 140px;
+        }
     }
 
     &__description {
@@ -807,6 +815,10 @@ header {
         justify-content: flex-end;
         z-index: 3;
         padding: 30px;
+
+        @include mobile_md {
+            padding-top: 10px;
+        }
 
         @include mobile {
             align-items: center !important;

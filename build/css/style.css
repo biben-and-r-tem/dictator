@@ -1920,6 +1920,9 @@ nav .btn {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0 40px;
+  padding-top: 2px;
+  padding-left: 40px;
+  padding-right: 40px;
   white-space: nowrap;
   text-transform: uppercase;
   font-size: 18px;
@@ -2038,8 +2041,6 @@ nav .btn {
   background: #232323;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-  overflow-y: scroll;
-  overflow-x: hidden;
   opacity: 0;
   visibility: hidden;
 }
@@ -2814,7 +2815,7 @@ nav .btn {
 }
 
 .food-menu-switch i,
-.food-menu-close i {
+.close-popup i {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2829,15 +2830,15 @@ nav .btn {
 }
 
 .food-menu-switch span,
-.food-menu-close span {
+.close-popup span {
   display: block;
   width: 100%;
 }
 
 .food-menu-switch span::before,
 .food-menu-switch span::after,
-.food-menu-close span::before,
-.food-menu-close span::after {
+.close-popup span::before,
+.close-popup span::after {
   content: '';
   position: absolute;
   left: 0;
@@ -2871,7 +2872,7 @@ nav .btn {
   bottom: 0;
 }
 
-.food-menu-close {
+.close-popup {
   position: fixed;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2885,20 +2886,20 @@ nav .btn {
   top: 40px;
 }
 
-.food-menu-close span::before,
-.food-menu-close span::after {
+.close-popup span::before,
+.close-popup span::after {
   top: 0;
   right: 0;
   bottom: 0;
 }
 
-.food-menu-close span::before {
+.close-popup span::before {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.food-menu-close span::after {
+.close-popup span::after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -3132,6 +3133,32 @@ nav .btn {
   margin-top: 20px;
 }
 
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background: #232323;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .map {
   position: relative;
   height: 599px;
@@ -3344,7 +3371,8 @@ footer {
 
   .btn {
     font-size: 16px;
-    padding: 0 25px;
+    padding-left: 25px;
+    padding-right: 25px;
     height: 60px;
   }
 
@@ -3632,6 +3660,11 @@ footer {
   .mob-switch {
     height: 44px;
     width: 62px;
+  }
+
+  .mob-menu {
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .main-top-block .title-block__title,
@@ -4107,7 +4140,9 @@ footer {
   .btn {
     font-size: 13px;
     height: 40px;
-    padding: 0 15px;
+    padding-top: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .mob-switch {

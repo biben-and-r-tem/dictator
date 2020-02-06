@@ -1049,6 +1049,15 @@ footer::before {
   .food-menu-items:nth-child(3) {
     padding-right: 0;
   }
+
+  .gallery-items__description,
+  .gallery-items__description-bg {
+    height: 140px;
+  }
+
+  .gallery-items__description {
+    padding-top: 10px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -1066,6 +1075,11 @@ footer::before {
   .food-menu-items__icon {
     width: 80px;
     height: 80px;
+  }
+
+  .gallery-items__description,
+  .gallery-items__description-bg {
+    height: 130px;
   }
 }
 /*# sourceMappingURL=night.css.map */

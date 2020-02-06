@@ -6,10 +6,35 @@ $(window).bind("load resize ready", function () {
             width = $(this).outerWidth(),
             height = $(this).outerHeight();
 
+        var popUpTl = new TimelineMax({
+                paused: true
+            }),
+            popUp = $('.form-popup'),
+            closePopUp = $('.close-popup');
+
+        popUpTl
+            .to(popUp, 0, {
+                display: 'flex'
+            })
+            .to(popUp, 0.6, {
+                autoAlpha: 1,
+                ease: Linear.easeNone
+            });
+
         svg.attr("width", width).attr("height", height).attr("viewBox", '0 0 ' + width + ' ' + height);
         rect1.attr("width", width - 2).attr("height", height - 2);
         rect2.attr("width", width - 11).attr("height", height - 11);
 
+        if ($(this).parent().parent().parent().has('header') || $(this).parent().parent().parent().has('footer')) {
+            $(this).click(function (e) {
+                e.preventDefault();
+                popUpTl.play();
+
+                closePopUp.click(function (e) {
+                    popUpTl.reverse();
+                });
+            });
+        }
     });
 
     if ($(window).outerWidth() <= 1200 && !$('.menu-block').children().hasClass('mob-switch')) {
@@ -39,11 +64,13 @@ $(window).bind("load resize ready", function () {
         $('header .menu-block_left').prependTo('header nav');
     }
 
-    $('.mob-switch').each(function (index, element) {
+    $('.mob-switch').each(function () {
         var mobSwitchTl = new TimelineMax({
                 paused: true
             }),
-            mobMenu = $(this).parent().parent().find('.mob-menu');
+            mobMenu = $(this).parent().parent().find('.mob-menu'),
+            mobSwitch = $(this),
+            scroll = $(this).parent().parent().find('.scroll-to')
 
         mobSwitchTl
             .to(mobMenu, 0, {
@@ -54,19 +81,26 @@ $(window).bind("load resize ready", function () {
                 ease: Linear.easeNone
             });
 
-        element.animation = mobSwitchTl;
-    });
+        mobSwitch.click(function (e) {
+            e.preventDefault();
 
-    $('.mob-switch').click(function (e) {
-        e.preventDefault();
+            $(this).toggleClass('close');
 
-        $(this).toggleClass('close');
+            if ($(this).hasClass('close')) {
+                mobSwitchTl.play();
+            } else {
+                mobSwitchTl.reverse();
+            };
 
-        if ($(this).hasClass('close')) {
-            this.animation.play();
-        } else {
-            this.animation.reverse();
-        }
+            scroll.click(function (e) {
+                e.preventDefault();
+
+                if (mobSwitch.hasClass('close')) {
+                    mobSwitchTl.reverse();
+                    mobSwitch.removeClass('close');
+                };
+            });
+        });
     });
 });
 
@@ -80,6 +114,7 @@ $(document).ready(function () {
             'background': 'linear-gradient(180deg, #232323 0%, rgba(35, 35, 35, 0.75) 100%)'
         });
     };
+
 
     $('.scroll-to').click(function (e) {
         e.preventDefault();
@@ -96,6 +131,7 @@ $(document).ready(function () {
             ease: Circ.easeOut
         });
     });
+
 
     $(".popup-gal a").each(function () {
         if ($(this).hasClass('btn') || $(this).hasClass('see-more')) {
@@ -133,11 +169,12 @@ $(document).ready(function () {
         }
     });
 
-    $('.food-menu-page-block').each(function (index, element) {
+    $('.food-menu-page-block').each(function () {
         var foodSwitchTl = new TimelineMax({
                 paused: true
             }),
-            foodMenu = $(this).find('.food-menu-items');
+            foodMenu = $(this).find('.food-menu-items'),
+            scroll = $(this).find('.scroll-to');
 
         foodSwitchTl
             .to(foodMenu, 0, {
@@ -150,19 +187,34 @@ $(document).ready(function () {
 
         $('.food-menu-switch').click(function (e) {
             e.preventDefault();
-            $('<a href="#" class="food-menu-close"><i><span></span></i></a>').prependTo(foodMenu);
+            $('<a href="#" class="close-popup"><i><span></span></i></a>').prependTo(foodMenu);
             foodSwitchTl.play();
+            var closePopup = $(this).parent().find('.close-popup');
 
-            $('.food-menu-close').click(function (e) {
+            closePopup.click(function (e) {
                 e.preventDefault();
                 foodSwitchTl.reverse()
                     .eventCallback("onReverseComplete", function () {
-                        $('.food-menu-close').remove();
+                        $('.close-popup').remove();
                         TweenMax.to(foodMenu, 0, {
                             clearProps: 'all'
                         });
                     });
+            });
 
+            scroll.click(function (e) {
+                e.preventDefault();
+
+                if ($('.food-menu-close').length) {
+                    foodSwitchTl.reverse()
+                        .eventCallback("onReverseComplete", function () {
+                            $('.food-menu-close').remove();
+                            TweenMax.to(foodMenu, 0, {
+                                clearProps: 'all'
+                            });
+                        });
+                    $('.food-menu-close').remove();
+                };
             });
         });
     });
