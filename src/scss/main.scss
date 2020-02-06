@@ -423,6 +423,7 @@ nav {
     border-radius: 0;
     background: transparent;
     cursor: pointer;
+    transition: 0.6s $ease-out-sine;
 
     @include mobile_sm {
         font-size: 13px;
@@ -447,6 +448,26 @@ nav {
         padding-left: 25px;
         padding-right: 25px;
         height: 60px;
+    }
+
+    &:hover {
+        box-shadow: $shadow-2;
+
+        svg {
+
+            #btn-gradient {
+                --color-stop-1: #FBFBFF;
+                --color-stop-2: #FBFBFF;
+                --color-stop-3: #FBFBFF;
+            }
+
+            rect {
+
+                &:nth-child(1) {
+                    stroke-width: 0;
+                }
+            }
+        }
     }
 
     &_with-bg {

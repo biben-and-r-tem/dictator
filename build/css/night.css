@@ -12,6 +12,10 @@ header {
   color: #FBFBFF;
 }
 
+.btn:hover {
+  background: #CCA43B;
+}
+
 .btn_with-bg {
   background: rgba(10, 9, 8, 0.7);
 }

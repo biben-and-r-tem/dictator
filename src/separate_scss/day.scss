@@ -16,6 +16,10 @@ header {
 .btn {
     color: $color-FBFBFF;
 
+    &:hover {
+        background: $color-E2C391;
+    }
+
     &_with-bg {
         background: fade-out($color-0A0908, 0.3);
     }

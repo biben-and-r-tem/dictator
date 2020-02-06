@@ -1958,6 +1958,24 @@ nav .btn {
   border-radius: 0;
   background: transparent;
   cursor: pointer;
+  -webkit-transition: 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-transition: 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover svg #btn-gradient {
+  --color-stop-1: #FBFBFF;
+  --color-stop-2: #FBFBFF;
+  --color-stop-3: #FBFBFF;
+}
+
+.btn:hover svg rect:nth-child(1) {
+  stroke-width: 0;
 }
 
 .btn_with-bg {
