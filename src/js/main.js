@@ -205,15 +205,14 @@ $(document).ready(function () {
             scroll.click(function (e) {
                 e.preventDefault();
 
-                if ($('.food-menu-close').length) {
+                if ($('.close-popup').length) {
                     foodSwitchTl.reverse()
                         .eventCallback("onReverseComplete", function () {
-                            $('.food-menu-close').remove();
+                            closePopup.remove();
                             TweenMax.to(foodMenu, 0, {
                                 clearProps: 'all'
                             });
                         });
-                    $('.food-menu-close').remove();
                 };
             });
         });
