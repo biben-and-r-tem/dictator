@@ -559,6 +559,10 @@ footer {
   background: url(../img/left-arrow-day.svg);
 }
 
+.preloader {
+  background: #232323;
+}
+
 @media (max-width: 1440px) {
   .food-menu .food-menu-items {
     padding-left: 30px;

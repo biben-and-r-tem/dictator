@@ -892,6 +892,10 @@ footer::before {
   background: url(../img/left-arrow-night.svg);
 }
 
+.preloader {
+  background: #0A0908;
+}
+
 @media (max-width: 1440px) {
   .food-menu__bg {
     width: 78%;
