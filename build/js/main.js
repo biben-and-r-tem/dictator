@@ -27683,6 +27683,7 @@ $(window).bind("load resize ready", function () {
                 popUpTl.play();
 
                 closePopUp.click(function (e) {
+                    e.preventDefault();
                     popUpTl.reverse();
                 });
             });
