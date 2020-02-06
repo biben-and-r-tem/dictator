@@ -4213,6 +4213,11 @@ footer {
   .form-block form input {
     font-size: 15px;
   }
+
+  .map-contacts-block__social a {
+    width: 62px;
+    height: 62px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4283,6 +4288,11 @@ footer {
 
   .map-contacts-block {
     padding: 15px;
+  }
+
+  .map-contacts-block__social a {
+    width: 52px;
+    height: 52px;
   }
 }
 

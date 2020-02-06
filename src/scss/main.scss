@@ -2033,6 +2033,16 @@ nav {
             transform: rotate(45deg);
             margin: 40px 32px;
 
+            @include mobile_sm {
+                width: 52px;
+                height: 52px;
+            }
+
+            @include mobile {
+                width: 62px;
+                height: 62px;
+            }
+
             &::before {
                 content: '';
                 position: absolute;
