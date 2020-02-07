@@ -27784,7 +27784,7 @@ $(document).ready(function () {
         });
     };
 
-    $('.btn').each(function () {
+    $('.btn-popup').each(function () {
         var popUpTl = new TimelineMax({
                 paused: true
             }),
@@ -27800,17 +27800,15 @@ $(document).ready(function () {
                 ease: Linear.easeNone
             });
 
-        if ($(this).parent().hasClass('menu-block')) {
-            $(this).click(function (e) {
-                e.preventDefault();
-                popUpTl.play();
+        $(this).click(function (e) {
+            e.preventDefault();
+            popUpTl.play();
 
-                closePopUp.click(function (e) {
-                    e.preventDefault();
-                    popUpTl.reverse();
-                });
+            closePopUp.click(function (e) {
+                e.preventDefault();
+                popUpTl.reverse();
             });
-        };
+        });
     });
 
     $('.scroll-to').click(function (e) {
