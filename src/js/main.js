@@ -66,7 +66,8 @@ $(window).bind("load resize ready", function () {
                 ease: Linear.easeNone
             }, 0)
             .to(span, 0.3, {
-                marginBottom: 0,
+                top: 0,
+                bottom: 0,
                 ease: Linear.easeNone
             })
             .to(span2, 0.3, {

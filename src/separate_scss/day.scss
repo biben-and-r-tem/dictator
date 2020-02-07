@@ -710,6 +710,16 @@ header {
     }
 }
 
+.form-popup {
+    .title-block {
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
 footer {
     background: $color-0F0E0C;
 }

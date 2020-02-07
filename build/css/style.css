@@ -1725,10 +1725,19 @@ header .menu {
 
 header .menu-block_left {
   width: 39%;
+  position: relative;
+  z-index: 2;
 }
 
 header .menu-block_right {
   width: 38%;
+  position: relative;
+  z-index: 2;
+}
+
+header .logo {
+  position: relative;
+  z-index: 2;
 }
 
 header .day-night-switch::after {
@@ -2017,23 +2026,7 @@ nav .btn {
 
 .mob-switch {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: block;
   width: 69px;
   height: 48px;
   margin-left: 24px;
@@ -2049,14 +2042,26 @@ nav .btn {
 }
 
 .mob-switch span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   display: block;
   width: 60%;
   height: 2px;
-  margin-bottom: 6px;
 }
 
-.mob-switch span:last-child {
-  margin-bottom: 0;
+.mob-switch span:nth-child(1) {
+  top: 27%;
+}
+
+.mob-switch span:nth-child(2) {
+  top: 0;
+  bottom: 0;
+}
+
+.mob-switch span:nth-child(3) {
+  bottom: 27%;
 }
 
 .mob-menu {
@@ -2084,6 +2089,7 @@ nav .btn {
   padding: 60px 0;
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
 }
 
 .main-top-block .title-block__title,
@@ -2878,14 +2884,6 @@ nav .btn {
   line-height: 100%;
 }
 
-.food-menu-items__item.active + .food-menu-items__dropdown {
-  display: block;
-}
-
-.food-menu-items__dropdown {
-  display: none;
-}
-
 .food-menu-switch i,
 .close-popup i {
   position: relative;
@@ -3428,6 +3426,11 @@ footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -3442,6 +3445,48 @@ footer {
 .preloader img {
   width: 80%;
   max-width: 500px;
+  -webkit-animation: preloader_animation 5s ease-in-out infinite;
+  animation: preloader_animation 5s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.preloader span {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes preloader_animation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes preloader_animation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 1440px) {
@@ -3549,6 +3594,10 @@ footer {
 
   .map-contacts-block__title {
     font-size: 44px;
+  }
+
+  .preloader span {
+    font-size: 40px;
   }
 }
 
@@ -3731,6 +3780,10 @@ footer {
   .map-contacts-block__title {
     font-size: 42px;
   }
+
+  .preloader span {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -3783,11 +3836,6 @@ footer {
   .mob-switch {
     height: 44px;
     width: 62px;
-  }
-
-  .mob-menu {
-    overflow-y: scroll;
-    overflow-x: hidden;
   }
 
   .main-top-block .title-block__title,
@@ -4012,6 +4060,10 @@ footer {
   footer .menu {
     margin-top: 40px;
   }
+
+  .preloader span {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -4039,6 +4091,21 @@ footer {
 
   .menu li:last-child {
     margin-bottom: 0;
+  }
+
+  .mob-menu {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    height: -webkit-calc(100% - 100px);
+    height: calc(100% - 100px);
+    width: 100%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .title-top-block {
@@ -4179,6 +4246,10 @@ footer {
   .map-contacts-block__title {
     font-size: 30px;
   }
+
+  .preloader span {
+    font-size: 18px;
+  }
 }
 
 @media all and (max-width: 576px) {
@@ -4306,6 +4377,12 @@ footer {
   .mob-switch {
     width: 50px;
     height: 40px;
+  }
+
+  .mob-menu {
+    top: 80px;
+    height: -webkit-calc(100% - 80px);
+    height: calc(100% - 80px);
   }
 
   .promo-page-section .promo-page-block .logo {

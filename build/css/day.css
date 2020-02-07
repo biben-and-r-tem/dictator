@@ -551,6 +551,11 @@ header {
   color: #E2C391;
 }
 
+.form-popup .title-block::before,
+.form-popup .title-block::after {
+  display: none;
+}
+
 footer {
   background: #0F0E0C;
 }

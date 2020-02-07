@@ -121,6 +121,8 @@ header {
 
         &_left {
             width: 39%;
+            position: relative;
+            z-index: 2;
 
             @include desktop {
                 width: initial;
@@ -129,6 +131,9 @@ header {
 
         &_right {
             width: 38%;
+            position: relative;
+            z-index: 2;
+
 
             @include tablet {
                 width: initial;
@@ -141,6 +146,8 @@ header {
     }
 
     .logo {
+        position: relative;
+        z-index: 2;
 
         @include desktop {
             order: 1;
@@ -514,10 +521,7 @@ nav {
 
 .mob-switch {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: block;
     width: 69px;
     height: 48px;
     margin-left: 24px;
@@ -546,13 +550,25 @@ nav {
     }
 
     span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
         display: block;
         width: 60%;
         height: 2px;
-        margin-bottom: 6px;
 
-        &:last-child {
-            margin-bottom: 0;
+        &:nth-child(1) {
+            top: 27%;
+        }
+
+        &:nth-child(2) {
+            top: 0;
+            bottom: 0;
+        }
+
+        &:nth-child(3) {
+            bottom: 27%;
         }
     }
 }
@@ -570,8 +586,20 @@ nav {
     padding: 60px 0;
     opacity: 0;
     visibility: hidden;
+    z-index: 1;
 
-    @include tablet {
+    @include mobile_sm {
+        top: 80px;
+        height: calc(100% - 80px);
+    }
+
+    @include tablet_md {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        height: calc(100% - 100px);
+        width: 100%;
+        justify-content: flex-start;
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -1502,13 +1530,13 @@ nav {
     }
 }
 
-.food-menu-items__item.active+.food-menu-items__dropdown {
-    display: block;
-}
+// .food-menu-items__item.active+.food-menu-items__dropdown {
+//     display: block;
+// }
 
-.food-menu-items__dropdown {
-    display: none;
-}
+// .food-menu-items__dropdown {
+//     display: none;
+// }
 
 .food-menu-switch,
 .close-popup {
@@ -2142,6 +2170,7 @@ footer {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 3000;
@@ -2149,5 +2178,42 @@ footer {
     img {
         width: 80%;
         max-width: 500px;
+        animation: preloader_animation 5s ease-in-out infinite;
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-size: 50px;
+        text-transform: uppercase;
+
+        @include tablet_sm {
+            font-size: 18px;
+        }
+
+        @include tablet {
+            font-size: 20px;
+        }
+
+        @include desktop {
+            font-size: 30px;
+        }
+
+        @include desktop_xl {
+            font-size: 40px;
+        }
+    }
+}
+
+@keyframes preloader_animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
